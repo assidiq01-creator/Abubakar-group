@@ -98,7 +98,12 @@ export default function Home() {
       <nav ref={navRef} className="nav">
         <div className="nav-inner">
           <a href="/" className="nav-logo">
-            Abubakar Group<span className="dot" />Ltd
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://abubakarmall.com/wp-content/uploads/2024/11/Untitled-design-10.png"
+              alt="Abubakar Group Ltd"
+              className="nav-group-logo"
+            />
           </a>
           <ul className="nav-links">
             <li><a href="#portfolio">Portfolio</a></li>
@@ -234,15 +239,8 @@ export default function Home() {
           display: flex; align-items: center; justify-content: space-between;
           height: 66px; max-width: 1300px; margin: 0 auto;
         }
-        .nav-logo {
-          font-family: Georgia, serif; font-size: 1rem;
-          color: #0D1B2A; letter-spacing: 0.01em;
-        }
-        .dot {
-          display: inline-block; width: 5px; height: 5px;
-          background: #B8860B; border-radius: 50%;
-          margin: 0 5px 1px; vertical-align: middle;
-        }
+        .nav-logo { display: flex; align-items: center; }
+        .nav-group-logo { height: 42px; width: auto; object-fit: contain; display: block; }
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
         .nav-links a {
           font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
