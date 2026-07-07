@@ -26,8 +26,8 @@ const SUBSIDIARIES = [
     tag: "Education & Training",
     desc: "Committed to education and capacity building through professional training, skill development, and academic preparation — equipping individuals for global opportunities.",
     logo: "https://abubakarmall.com/wp-content/uploads/2026/03/ACADEMY-LOGO-scaled-e1773801253995.png",
-    url: "https://asm-academy.com",
-    urlLabel: "asm-academy.com",
+    url: "http://www.asm-academy.com.ng",
+    urlLabel: "asm-academy.com.ng",
     bg: "#F7F8FA",
   },
   {
@@ -35,8 +35,8 @@ const SUBSIDIARIES = [
     tag: "Consultancy & Immigration",
     desc: "Expert support in international education admissions and immigration processes — helping clients navigate global systems and achieve academic and professional goals abroad.",
     logo: "https://abubakarmall.com/wp-content/uploads/2026/03/ASM-C-last-%E2%9C%85.png",
-    url: "https://abubakarmall.com/consultancy",
-    urlLabel: "Learn more",
+    url: "https://asm-consultancy.abubakarmall.com",
+    urlLabel: "asm-consultancy.abubakarmall.com",
     bg: "#FFFFFF",
   },
   {
@@ -44,8 +44,8 @@ const SUBSIDIARIES = [
     tag: "Property & Investment",
     desc: "Specialising in property development, investment, and management across key markets — delivering reliable and profitable real estate solutions for individuals and institutions.",
     logo: "https://abubakarmall.com/wp-content/uploads/2026/03/ASM-REAL-ESTATE.png",
-    url: "https://abubakarmall.com/realestate",
-    urlLabel: "Learn more",
+    url: "https://real-estate.abubakarmall.com",
+    urlLabel: "real-estate.abubakarmall.com",
     bg: "#F7F8FA",
   },
   {
@@ -53,8 +53,8 @@ const SUBSIDIARIES = [
     tag: "Digital & Software Development",
     desc: "A forward-thinking digital agency delivering web development, software solutions, and AI-powered products to help brands grow and compete in the global digital economy.",
     logo: "https://abubakarmall.com/wp-content/uploads/2026/03/gfhf-2.png",
-    url: "https://arewa-digital.com",
-    urlLabel: "arewa-digital.com",
+    url: "https://www.digital.abubakarmall.com",
+    urlLabel: "digital.abubakarmall.com",
     bg: "#FFFFFF",
   },
 ];
@@ -100,7 +100,7 @@ export default function Home() {
           <a href="/" className="nav-logo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://abubakarmall.com/wp-content/uploads/2024/11/Untitled-design-10.png"
+              src="https://abubakarmall.com/wp-content/uploads/2025/04/ABUPNG.png"
               alt="Abubakar Group Ltd"
               className="nav-group-logo"
             />
@@ -240,7 +240,7 @@ export default function Home() {
           height: 66px; max-width: 1300px; margin: 0 auto;
         }
         .nav-logo { display: flex; align-items: center; }
-        .nav-group-logo { height: 42px; width: auto; object-fit: contain; display: block; }
+        .nav-group-logo { height: 36px; max-width: 180px; width: auto; object-fit: contain; display: block; }
         .nav-links { display: flex; gap: 2.5rem; list-style: none; }
         .nav-links a {
           font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
@@ -251,7 +251,7 @@ export default function Home() {
 
         /* ── Progress dots ── */
         .dots {
-          position: fixed; right: 2rem; top: 50%; transform: translateY(-50%);
+          position: fixed; right: 1.2rem; top: 50%; transform: translateY(-50%);
           z-index: 150; display: flex; flex-direction: column; gap: 10px;
         }
         .dot-btn {
@@ -261,7 +261,15 @@ export default function Home() {
           transition: background 0.25s, transform 0.25s;
         }
         .dot-btn.active { background: #B8860B; transform: scale(1.3); }
-        @media (max-width: 640px) { .dots { display: none; } }
+        /* On mobile: move dots to bottom-center, horizontal */
+        @media (max-width: 640px) {
+          .dots {
+            right: unset; top: unset;
+            bottom: 1.4rem; left: 50%;
+            transform: translateX(-50%);
+            flex-direction: row; gap: 12px;
+          }
+        }
 
         /* ── Hero ── */
         .hero {
