@@ -814,21 +814,20 @@ export default function Home() {
         /* Hero elements are above the fold — skip reveal animation */
         .hero .reveal { opacity: 1; transform: none; transition: none; }
 
-        /* Full-bleed building — right 48% of viewport, absolute */
+        /* Full-bleed building — covers entire hero */
         .hero-building-panel {
-          position: absolute; top: 0; right: 0;
-          width: 52%; height: 100%;
+          position: absolute; top: 0; left: 0;
+          width: 100%; height: 100%;
           overflow: hidden;
         }
         .hero-building-img {
           width: 100%; height: 100%;
-          object-fit: cover; object-position: center;
+          object-fit: cover; object-position: center top;
         }
-        /* Gradient fade from navy into the building on the left edge */
+        /* Very light overlay — just enough for text legibility */
         .hero-building-fade {
-          position: absolute; top: 0; left: 0;
-          width: 55%; height: 100%;
-          background: linear-gradient(to right, var(--navy) 0%, rgba(8,21,34,0.65) 40%, rgba(8,21,34,0.1) 75%, transparent 100%);
+          position: absolute; inset: 0;
+          background: linear-gradient(to right, rgba(8,21,34,0.72) 0%, rgba(8,21,34,0.45) 40%, rgba(8,21,34,0.1) 70%, rgba(8,21,34,0.05) 100%);
           pointer-events: none;
         }
 
@@ -905,8 +904,7 @@ export default function Home() {
           50%      { transform: translateY(5px); }
         }
         @media (max-width: 860px) {
-          .hero-building-panel { width: 100%; opacity: 1; }
-          .hero-building-fade { width: 100%; background: linear-gradient(to right, var(--navy) 0%, rgba(8,21,34,0.7) 35%, rgba(8,21,34,0.15) 65%, transparent 100%); }
+          .hero-building-fade { background: linear-gradient(to right, rgba(8,21,34,0.82) 0%, rgba(8,21,34,0.55) 45%, rgba(8,21,34,0.15) 75%, rgba(8,21,34,0.05) 100%); }
           .hero-stats { grid-template-columns: repeat(2,1fr); max-width: 100%; }
           .stat-card:nth-child(2) { border-right: none; }
           .stat-card:nth-child(3),
