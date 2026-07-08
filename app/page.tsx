@@ -19,7 +19,7 @@ const SUBSIDIARIES = [
   },
   {
     num: "02",
-    name: "Abubakar Mall",
+    name: "Abubakar Shopping Mall",
     tag: "Import, Export & E-commerce Marketplace",
     desc: "Africa's growing marketplace connecting global suppliers with African businesses and consumers through seamless B2B and B2C commerce solutions.",
     features: ["E-commerce", "Wholesale", "Global Sourcing"],
@@ -675,10 +675,7 @@ export default function Home() {
           <div className="footer-col">
             <h4 className="footer-col-title">Contact Us</h4>
             <ul className="footer-list footer-contact">
-              <li>
-                <span className="contact-icon">📍</span>
-                <span>28 Gorrie Street, Dunfermline,<br/>KY11 4BA, United Kingdom</span>
-              </li>
+
               <li>
                 <span className="contact-icon">✉</span>
                 <a href="mailto:sales@abubakarmall.com">sales@abubakarmall.com</a>
