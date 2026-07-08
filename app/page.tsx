@@ -80,9 +80,9 @@ const SUBSIDIARIES = [
   {
     num: "07",
     name: "Comme S One Ltd",
-    tag: "Fashion, Lifestyle & Retail",
-    desc: "A premium fashion and lifestyle brand delivering curated collections and retail experiences with a distinct contemporary identity.",
-    features: ["Fashion", "Lifestyle", "Retail"],
+    tag: "International Trade & Export Consulting",
+    desc: "Based in Samsun, Turkey — specialising in import-export consulting, building materials, medical supplies, agro products and connecting West African entrepreneurs with global markets.",
+    features: ["Export Consulting", "Agro Products", "Global Trade"],
     logo: "https://commes-one.com/wp-content/uploads/2026/06/CSO-LOGO.png",
     url: "https://commes-one.com",
     accent: "#8B6914",
@@ -485,7 +485,6 @@ export default function Home() {
               { label: "About Us",      href: "#about" },
               { label: "Subsidiaries",  href: "#subsidiaries" },
               { label: "Our Impact",    href: "#impact" },
-              { label: "News",          href: "https://news.abubakarmall.com", target: "_blank" },
               { label: "Contact",       href: "#contact" },
             ].map(l => (
               <li key={l.label}>
@@ -508,7 +507,6 @@ export default function Home() {
               { label: "About",        href: "#about" },
               { label: "Subsidiaries", href: "#subsidiaries" },
               { label: "Impact",       href: "#impact" },
-              { label: "News",         href: "https://news.abubakarmall.com", target: "_blank" },
               { label: "Contact",      href: "#contact" },
             ].map(l => (
               <a key={l.label} href={l.href} className="nav-mobile-link"
