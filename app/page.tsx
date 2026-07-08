@@ -421,10 +421,10 @@ export default function Home() {
     return () => obs.disconnect();
   }, []);
 
-  // 3D page-flip: subsidiary cards
+  // 3D page-flip: subsidiary cards — toggle on every enter/exit
   useEffect(() => {
     const obs = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); }),
+      entries => entries.forEach(e => { e.target.classList.toggle("visible", e.isIntersecting); }),
       { threshold: 0.05 }
     );
     document.querySelectorAll(".sub-card").forEach(c => obs.observe(c));
