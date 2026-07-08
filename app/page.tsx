@@ -535,9 +535,11 @@ export default function Home() {
             </div>
 
             <h1 className="hero-headline reveal reveal-delay-1">
-              <span className="hero-headline-gold">ABUBAKAR</span>
-              <span className="hero-headline-rule"><span className="hero-headline-rule-line" /><span className="hero-headline-est">EST. 2018</span><span className="hero-headline-rule-line" /></span>
-              <span className="hero-headline-group">GROUP <span className="hero-headline-dot">·</span> LTD.</span>
+              <span className="hero-title-glass">
+                <span className="hero-headline-gold">ABUBAKAR</span>
+                <span className="hero-headline-rule"><span className="hero-headline-rule-line" /><span className="hero-headline-est">EST. 2018</span><span className="hero-headline-rule-line" /></span>
+                <span className="hero-headline-group">GROUP <span className="hero-headline-dot">·</span> LTD.</span>
+              </span>
             </h1>
 
             <p className="hero-para reveal reveal-delay-2">
@@ -889,18 +891,29 @@ export default function Home() {
           letter-spacing: -0.03em; color: #fff;
           margin-bottom: 1.6rem;
         }
+        .hero-title-glass {
+          display: inline-flex; flex-direction: column; align-items: flex-start;
+          padding: 1.4rem 2rem 1.2rem;
+          background: rgba(8,21,34,0.45);
+          backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 16px;
+          box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+        }
         .hero-headline-gold {
           display: block;
           font-size: 1em;
           letter-spacing: 0.08em;
           line-height: 1;
-          color: rgba(255,255,255,0.12);
-          text-shadow:
-            0 0 30px rgba(212,175,55,0.7),
-            0 0 70px rgba(212,175,55,0.3),
-            0 0 120px rgba(212,175,55,0.15),
-            0 4px 16px rgba(0,0,0,0.5);
-          position: relative;
+          background: linear-gradient(100deg, #F5D060 0%, #D4AF37 40%, #B8960C 65%, #F0C840 100%);
+          background-size: 200% auto;
+          -webkit-background-clip: text; background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: goldShimmer 5s linear infinite;
+        }
+        @keyframes goldShimmer {
+          0%   { background-position: 0% center; }
+          100% { background-position: 200% center; }
         }
         .hero-headline-rule {
           display: flex; align-items: center; gap: 12px;
@@ -926,14 +939,12 @@ export default function Home() {
           font-size: 0.26em;
           font-weight: 700;
           letter-spacing: 0.38em;
-          color: rgba(255,255,255,0.18);
-          text-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.15);
+          color: rgba(255,255,255,0.75);
           text-transform: uppercase;
           line-height: 1;
         }
         .hero-headline-dot {
-          color: rgba(212,175,55,0.25);
-          text-shadow: 0 0 16px rgba(212,175,55,0.6);
+          color: var(--gold);
           font-weight: 400;
         }
         .hero-para {
