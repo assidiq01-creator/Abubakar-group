@@ -884,7 +884,7 @@ export default function Home() {
         }
         .hero-headline {
           font-family: var(--font-display);
-          font-size: clamp(3.2rem, 5.5vw, 7.5rem);
+          font-size: clamp(2.24rem, 3.85vw, 5.25rem);
           font-weight: 700; line-height: 1.02;
           letter-spacing: -0.03em; color: #fff;
           margin-bottom: 1.6rem;
