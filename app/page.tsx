@@ -535,9 +535,9 @@ export default function Home() {
             </div>
 
             <h1 className="hero-headline reveal reveal-delay-1">
-              <span className="hero-headline-gold">Abubakar</span>
-              <br />
-              <span className="hero-headline-sub">Group <span className="hero-headline-ltd">Ltd.</span></span>
+              <span className="hero-headline-gold">ABUBAKAR</span>
+              <span className="hero-headline-rule"><span className="hero-headline-rule-line" /><span className="hero-headline-est">EST. 2018</span><span className="hero-headline-rule-line" /></span>
+              <span className="hero-headline-group">GROUP <span className="hero-headline-dot">·</span> LTD.</span>
             </h1>
 
             <p className="hero-para reveal reveal-delay-2">
@@ -890,35 +890,54 @@ export default function Home() {
           margin-bottom: 1.6rem;
         }
         .hero-headline-gold {
-          background: linear-gradient(100deg, #F0C840 0%, #D4AF37 40%, #B8960C 70%, #F0C840 100%);
-          background-size: 200% auto;
+          background: linear-gradient(100deg, #F5D060 0%, #D4AF37 35%, #9A7B0A 60%, #F0C840 80%, #F5D060 100%);
+          background-size: 250% auto;
           -webkit-background-clip: text; background-clip: text;
           -webkit-text-fill-color: transparent;
-          animation: goldShimmer 4s linear infinite;
-          filter: drop-shadow(0 0 28px rgba(212,175,55,0.35));
-          display: inline-block;
-        }
-        .hero-headline-sub {
-          color: #fff;
-          font-size: 0.72em;
-          letter-spacing: 0.04em;
+          animation: goldShimmer 5s linear infinite;
+          filter: drop-shadow(0 2px 32px rgba(212,175,55,0.4));
           display: block;
+          font-size: 1em;
+          letter-spacing: 0.06em;
+          line-height: 1;
         }
-        .hero-headline-ltd {
-          color: var(--gold);
-          font-size: 0.65em;
-          font-weight: 400;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
+        .hero-headline-rule {
+          display: flex; align-items: center; gap: 12px;
+          margin: 0.55rem 0 0.5rem;
+        }
+        .hero-headline-rule-line {
+          flex: 1; height: 1px;
+          background: linear-gradient(to right, transparent, rgba(212,175,55,0.5), transparent);
+          max-width: 80px;
+        }
+        .hero-headline-est {
           font-family: var(--font-nav);
+          font-size: 0.13em;
+          font-weight: 600;
+          letter-spacing: 0.28em;
+          color: rgba(212,175,55,0.65);
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+        .hero-headline-group {
+          display: block;
+          font-family: var(--font-nav);
+          font-size: 0.26em;
+          font-weight: 700;
+          letter-spacing: 0.38em;
+          color: rgba(255,255,255,0.88);
+          text-transform: uppercase;
+          line-height: 1;
+        }
+        .hero-headline-dot {
+          color: var(--gold);
+          opacity: 0.7;
+          font-weight: 400;
           -webkit-text-fill-color: var(--gold);
-          vertical-align: middle;
-          margin-left: 0.15em;
-          opacity: 0.85;
         }
         @keyframes goldShimmer {
           0%   { background-position: 0% center; }
-          100% { background-position: 200% center; }
+          100% { background-position: 250% center; }
         }
         .hero-para {
           font-size: clamp(0.95rem, 1.1vw, 1.1rem);
