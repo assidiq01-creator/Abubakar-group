@@ -395,6 +395,12 @@ function HeroBuilding() {
 export default function Home() {
   const navRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 1800);
+    return () => clearTimeout(t);
+  }, []);
 
   // Nav transparency → solid on scroll
   useEffect(() => {
@@ -427,6 +433,16 @@ export default function Home() {
 
   return (
     <>
+      {/* ── SPLASH LOADER ── */}
+      <div className={`splash${loaded ? " splash--out" : ""}`} aria-hidden="true">
+        <div className="splash-inner">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="https://abubakarmall.com/wp-content/uploads/2025/04/ABUPNG.png" alt="" className="splash-logo" />
+          <div className="splash-bar"><div className="splash-fill" /></div>
+          <p className="splash-tag">Abubakar Group Ltd.</p>
+        </div>
+      </div>
+
       {/* ── NAV ── */}
       <nav ref={navRef} className="nav">
         <div className="nav-inner">
@@ -811,8 +827,8 @@ export default function Home() {
         /* Gradient fade from navy into the building on the left edge */
         .hero-building-fade {
           position: absolute; top: 0; left: 0;
-          width: 60%; height: 100%;
-          background: linear-gradient(to right, var(--navy) 0%, rgba(8,21,34,0.75) 40%, rgba(8,21,34,0.2) 70%, transparent 100%);
+          width: 55%; height: 100%;
+          background: linear-gradient(to right, var(--navy) 0%, rgba(8,21,34,0.65) 40%, rgba(8,21,34,0.1) 75%, transparent 100%);
           pointer-events: none;
         }
 
@@ -890,7 +906,7 @@ export default function Home() {
         }
         @media (max-width: 860px) {
           .hero-building-panel { width: 100%; opacity: 1; }
-          .hero-building-fade { width: 100%; background: linear-gradient(to right, var(--navy) 0%, rgba(8,21,34,0.8) 35%, rgba(8,21,34,0.25) 65%, transparent 100%); }
+          .hero-building-fade { width: 100%; background: linear-gradient(to right, var(--navy) 0%, rgba(8,21,34,0.7) 35%, rgba(8,21,34,0.15) 65%, transparent 100%); }
           .hero-stats { grid-template-columns: repeat(2,1fr); max-width: 100%; }
           .stat-card:nth-child(2) { border-right: none; }
           .stat-card:nth-child(3),
@@ -1228,6 +1244,47 @@ export default function Home() {
         @media (max-width: 540px)  {
           .footer-inner { grid-template-columns: 1fr; }
           .footer-bottom { flex-direction: column; text-align: center; }
+        }
+
+        /* ══ SPLASH LOADER ══ */
+        .splash {
+          position: fixed; inset: 0; z-index: 9999;
+          background: var(--navy);
+          display: flex; align-items: center; justify-content: center;
+          transition: opacity 0.7s ease, visibility 0.7s ease;
+        }
+        .splash--out { opacity: 0; visibility: hidden; pointer-events: none; }
+        .splash-inner {
+          display: flex; flex-direction: column; align-items: center; gap: 1.8rem;
+        }
+        .splash-logo {
+          width: 160px; height: auto;
+          animation: splashLogoIn 0.9s cubic-bezier(0.22,1,0.36,1) both;
+        }
+        .splash-tag {
+          font-family: var(--font-nav);
+          font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+          color: rgba(212,175,55,0.7);
+          animation: splashLogoIn 0.9s 0.2s cubic-bezier(0.22,1,0.36,1) both;
+        }
+        .splash-bar {
+          width: 160px; height: 2px;
+          background: rgba(212,175,55,0.15);
+          border-radius: 2px; overflow: hidden;
+        }
+        .splash-fill {
+          height: 100%; width: 0;
+          background: linear-gradient(to right, var(--gold), var(--gold-light));
+          border-radius: 2px;
+          animation: splashProgress 1.5s 0.1s cubic-bezier(0.4,0,0.2,1) forwards;
+        }
+        @keyframes splashLogoIn {
+          from { opacity: 0; transform: translateY(18px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes splashProgress {
+          from { width: 0; }
+          to   { width: 100%; }
         }
 
       `}</style>
