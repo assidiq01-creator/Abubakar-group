@@ -1146,9 +1146,9 @@ export default function Home() {
           border-radius: 14px; overflow: hidden;
           aspect-ratio: 4/3;
           display: flex; align-items: center; justify-content: center;
-          background: linear-gradient(135deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 60%, rgba(212,175,55,0.04) 100%);
-          border: 1px solid rgba(255,255,255,0.12);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 8px 32px rgba(0,0,0,0.4);
+          background: linear-gradient(145deg, rgba(200,210,220,0.18) 0%, rgba(160,175,190,0.10) 40%, rgba(120,140,160,0.06) 100%);
+          border: 1px solid rgba(200,215,230,0.25);
+          box-shadow: inset 0 1px 0 rgba(220,230,240,0.2), inset 0 -1px 0 rgba(80,100,120,0.15), 0 8px 32px rgba(0,0,0,0.45);
         }
         .sub-logo-img {
           max-width: 55%; max-height: 55%;
