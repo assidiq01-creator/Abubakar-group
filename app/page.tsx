@@ -510,7 +510,6 @@ export default function Home() {
               { label: "Contact",      href: "#contact" },
             ].map(l => (
               <a key={l.label} href={l.href} className="nav-mobile-link"
-                {...(l.target ? { target: l.target, rel: "noopener noreferrer" } : {})}
                 onClick={() => setMenuOpen(false)}>{l.label}</a>
             ))}
             <a href="mailto:sales@abubakarmall.com" className="btn btn-gold" style={{marginTop:"1rem"}}>Get In Touch</a>
