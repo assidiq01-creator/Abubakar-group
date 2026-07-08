@@ -421,11 +421,11 @@ export default function Home() {
     return () => obs.disconnect();
   }, []);
 
-  // 3D page-flip: subsidiary cards — viewport root, fires when card snaps into view
+  // 3D page-flip: subsidiary cards
   useEffect(() => {
     const obs = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); }),
-      { threshold: 0.3 }
+      { threshold: 0.05 }
     );
     document.querySelectorAll(".sub-card").forEach(c => obs.observe(c));
     return () => obs.disconnect();
@@ -1248,12 +1248,15 @@ export default function Home() {
 
         /* ══ SPLASH LOADER ══ */
         .splash {
-          position: fixed; inset: 0; z-index: 9999;
+          position: fixed; inset: 0; z-index: 99999;
           background: var(--navy);
           display: flex; align-items: center; justify-content: center;
           transition: opacity 0.7s ease, visibility 0.7s ease;
         }
         .splash--out { opacity: 0; visibility: hidden; pointer-events: none; }
+        /* Hide nav until splash exits so only one logo shows */
+        .splash:not(.splash--out) ~ * .nav,
+        .splash:not(.splash--out) ~ .nav { opacity: 0; pointer-events: none; }
         .splash-inner {
           display: flex; flex-direction: column; align-items: center; gap: 1.8rem;
         }
