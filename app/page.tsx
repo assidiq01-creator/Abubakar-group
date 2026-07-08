@@ -7,18 +7,6 @@ import { useEffect, useRef, useState, useCallback } from "react";
 const SUBSIDIARIES = [
   {
     num: "01",
-    name: "Abubakar Mall",
-    tag: "Import, Export & E-commerce Marketplace",
-    desc: "Africa's growing marketplace connecting global suppliers with African businesses and consumers through seamless B2B and B2C commerce solutions.",
-    features: ["E-commerce", "Wholesale", "Global Sourcing"],
-    logo: "https://abubakarmall.com/wp-content/uploads/2024/11/cropped-Untitled-design-10.png",
-    url: "https://abubakarmall.com/shop",
-    accent: "#1A72C2",
-    imgBg: "linear-gradient(135deg,#061628 0%,#0E3060 50%,#061628 100%)",
-    imgIcon: "🛒",
-  },
-  {
-    num: "02",
     name: "Abubakar Global Trade Solutions",
     tag: "International Procurement & Logistics",
     desc: "Specialized in international trade, procurement services and logistics solutions for businesses and government institutions across the globe.",
@@ -28,6 +16,18 @@ const SUBSIDIARIES = [
     accent: "#1B8C4E",
     imgBg: "linear-gradient(135deg,#041408 0%,#0A3020 50%,#041408 100%)",
     imgIcon: "🌍",
+  },
+  {
+    num: "02",
+    name: "Abubakar Mall",
+    tag: "Import, Export & E-commerce Marketplace",
+    desc: "Africa's growing marketplace connecting global suppliers with African businesses and consumers through seamless B2B and B2C commerce solutions.",
+    features: ["E-commerce", "Wholesale", "Global Sourcing"],
+    logo: "https://abubakarmall.com/wp-content/uploads/2024/11/cropped-Untitled-design-10.png",
+    url: "https://abubakarmall.com/shop",
+    accent: "#1A72C2",
+    imgBg: "linear-gradient(135deg,#061628 0%,#0E3060 50%,#061628 100%)",
+    imgIcon: "🛒",
   },
   {
     num: "03",
