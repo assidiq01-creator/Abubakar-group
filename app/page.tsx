@@ -535,9 +535,11 @@ export default function Home() {
             </div>
 
             <h1 className="hero-headline reveal reveal-delay-1">
-              <span className="hero-headline-gold">ABUBAKAR</span>
-              <span className="hero-headline-rule"><span className="hero-headline-rule-line" /><span className="hero-headline-est">EST. 2018</span><span className="hero-headline-rule-line" /></span>
-              <span className="hero-headline-group">GROUP <span className="hero-headline-dot">·</span> LTD.</span>
+              <span className="hero-glass-card">
+                <span className="hero-headline-gold">ABUBAKAR</span>
+                <span className="hero-headline-rule"><span className="hero-headline-rule-line" /><span className="hero-headline-est">EST. 2018</span><span className="hero-headline-rule-line" /></span>
+                <span className="hero-headline-group">GROUP <span className="hero-headline-dot">·</span> LTD.</span>
+              </span>
             </h1>
 
             <p className="hero-para reveal reveal-delay-2">
@@ -888,6 +890,21 @@ export default function Home() {
           font-weight: 700; line-height: 1.02;
           letter-spacing: -0.03em; color: #fff;
           margin-bottom: 1.6rem;
+        }
+        .hero-glass-card {
+          display: inline-flex; flex-direction: column; align-items: flex-start;
+          padding: 1.6rem 2.2rem 1.4rem;
+          background: rgba(255,255,255,0.06);
+          backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+          border: 1px solid rgba(212,175,55,0.22);
+          border-radius: 16px;
+          box-shadow: 0 8px 48px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+          position: relative; overflow: hidden;
+        }
+        .hero-glass-card::before {
+          content: '';
+          position: absolute; top: 0; left: 0; right: 0; height: 1px;
+          background: linear-gradient(to right, transparent, rgba(212,175,55,0.5), transparent);
         }
         .hero-headline-gold {
           background: linear-gradient(100deg, #F5D060 0%, #D4AF37 35%, #9A7B0A 60%, #F0C840 80%, #F5D060 100%);
