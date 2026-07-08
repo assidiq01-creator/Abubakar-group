@@ -926,12 +926,12 @@ export default function Home() {
           font-family: var(--font-display);
           font-size: clamp(2rem, 3.5vw, 3.4rem);
           font-weight: 700; line-height: 1.12;
-          letter-spacing: -0.02em; color: var(--text);
+          letter-spacing: -0.02em; color: #fff;
           margin-bottom: 1.2rem;
         }
         .section-desc {
           font-size: clamp(0.9rem, 1vw, 1rem);
-          color: var(--muted); line-height: 1.8; max-width: 560px;
+          color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 560px;
         }
 
         /* ══ SUBSIDIARIES ══ */
@@ -960,7 +960,7 @@ export default function Home() {
           scroll-snap-align: start;
           overflow: hidden;
           padding: clamp(2rem, 5vh, 4rem) var(--pad);
-          background: var(--white);
+          background: var(--navy-mid);
           perspective: 2400px;
           display: flex; align-items: center; justify-content: center;
         }
@@ -973,10 +973,10 @@ export default function Home() {
           display: grid; grid-template-columns: 1fr 1fr;
           gap: clamp(2.5rem, 5vw, 6rem); align-items: center;
           padding: clamp(2rem, 4vw, 3.5rem);
-          background: var(--white);
-          border: 1px solid #E8EDF2;
+          background: var(--navy-light);
+          border: 1px solid rgba(212,175,55,0.15);
           border-radius: 20px;
-          box-shadow: 0 8px 60px rgba(0,0,0,0.07);
+          box-shadow: 0 8px 60px rgba(0,0,0,0.4);
           width: 100%; max-width: 1100px;
           transform-style: preserve-3d;
           will-change: transform, opacity;
@@ -1043,12 +1043,12 @@ export default function Home() {
           font-family: var(--font-display);
           font-size: clamp(1.5rem, 2.5vw, 2.4rem);
           font-weight: 700; line-height: 1.12;
-          letter-spacing: -0.02em; color: var(--text);
+          letter-spacing: -0.02em; color: #fff;
           margin-bottom: 1rem;
         }
         .sub-desc {
           font-size: clamp(0.88rem, 1vw, 0.98rem);
-          color: var(--muted); line-height: 1.8;
+          color: rgba(255,255,255,0.55); line-height: 1.8;
           margin-bottom: 1.4rem;
         }
         .sub-features {
@@ -1058,8 +1058,8 @@ export default function Home() {
           font-family: var(--font-nav);
           font-size: 0.65rem; font-weight: 600;
           letter-spacing: 0.1em; text-transform: uppercase;
-          color: var(--muted);
-          border: 1px solid #D8DDE4;
+          color: rgba(255,255,255,0.5);
+          border: 1px solid rgba(255,255,255,0.12);
           padding: 5px 12px; border-radius: 2px;
         }
 
@@ -1144,7 +1144,7 @@ export default function Home() {
           scroll-snap-align: start;
           overflow: hidden;
           padding: clamp(3rem, 6vh, 5rem) var(--pad);
-          background: var(--off-white);
+          background: var(--navy);
           display: flex; flex-direction: column; justify-content: center;
         }
         .about-inner {
@@ -1154,7 +1154,7 @@ export default function Home() {
         }
         .about-right p {
           font-size: clamp(0.9rem, 1vw, 1rem);
-          color: var(--muted); line-height: 1.85;
+          color: rgba(255,255,255,0.55); line-height: 1.85;
         }
         .about-right p + p { margin-top: 1.2rem; }
         .about-tags {
@@ -1163,12 +1163,12 @@ export default function Home() {
         .about-tag {
           font-family: var(--font-nav);
           font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
-          text-transform: uppercase; color: var(--navy);
-          border: 1px solid rgba(13,27,42,0.2);
+          text-transform: uppercase; color: var(--gold);
+          border: 1px solid rgba(212,175,55,0.3);
           padding: 6px 14px; border-radius: 2px;
           transition: background 0.2s, color 0.2s;
         }
-        .about-tag:hover { background: var(--navy); color: #fff; }
+        .about-tag:hover { background: rgba(212,175,55,0.12); color: var(--gold-light); }
         @media (max-width: 720px) { .about-inner { grid-template-columns: 1fr; } }
 
         /* ══ FOOTER ══ */
