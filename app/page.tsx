@@ -71,7 +71,7 @@ const SUBSIDIARIES = [
     tag: "News, Media & Current Affairs",
     desc: "Breaking news and in-depth coverage across Nigeria, Africa, Türkiye and the Middle East — keeping communities informed and connected to the world.",
     features: ["Breaking News", "Africa Coverage", "Middle East"],
-    logo: "https://i0.wp.com/news.abubakarmall.com/wp-content/uploads/2024/11/Yerwa-Global.png?fit=2240%2C1260&ssl=1",
+    logo: "https://news.abubakarmall.com/wp-content/uploads/2024/11/Yerwa-Global.png",
     url: "https://news.abubakarmall.com",
     accent: "#C0392B",
     imgBg: "linear-gradient(135deg,#1a0000 0%,#3d0a0a 50%,#1a0000 100%)",
