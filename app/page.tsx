@@ -642,10 +642,11 @@ export default function Home() {
             </p>
             <div className="footer-socials">
               {[
-                { label: "LI", href: "https://www.linkedin.com/company/abubakar-group" },
-                { label: "FB", href: "https://www.facebook.com/abubakarmall" },
+                { label: "FB", href: "https://www.facebook.com/AbubakarShoppingMall" },
+                { label: "𝕏",  href: "https://x.com/abubakar_mall" },
                 { label: "IG", href: "https://www.instagram.com/abubakarmall/" },
-                { label: "YT", href: "https://www.youtube.com/@abubakarmall" },
+                { label: "LI", href: "https://www.linkedin.com/in/abubakar-ibrahim-abubakar-8688ab177/" },
+                { label: "YT", href: "https://www.youtube.com/@AbubakarGroup" },
               ].map(s => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="social-icon">
                   {s.label}
