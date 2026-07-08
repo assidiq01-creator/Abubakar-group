@@ -613,7 +613,6 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={s.logo} alt={s.name} className="sub-logo-img" />
               <div className="sub-icon-bg">{s.imgIcon}</div>
-              <div className="sub-visual-glow" style={{ background: `radial-gradient(circle, ${s.accent}22 0%, transparent 70%)` }} />
             </div>
           </div>
         </section>
