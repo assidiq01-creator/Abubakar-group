@@ -536,7 +536,9 @@ export default function Home() {
             </div>
 
             <h1 className="hero-headline reveal reveal-delay-1">
-              Abubakar<br />Group Ltd.
+              <span className="hero-headline-gold">Abubakar</span>
+              <br />
+              <span className="hero-headline-sub">Group <span className="hero-headline-ltd">Ltd.</span></span>
             </h1>
 
             <p className="hero-para reveal reveal-delay-2">
@@ -887,6 +889,37 @@ export default function Home() {
           font-weight: 700; line-height: 1.02;
           letter-spacing: -0.03em; color: #fff;
           margin-bottom: 1.6rem;
+        }
+        .hero-headline-gold {
+          background: linear-gradient(100deg, #F0C840 0%, #D4AF37 40%, #B8960C 70%, #F0C840 100%);
+          background-size: 200% auto;
+          -webkit-background-clip: text; background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: goldShimmer 4s linear infinite;
+          filter: drop-shadow(0 0 28px rgba(212,175,55,0.35));
+          display: inline-block;
+        }
+        .hero-headline-sub {
+          color: #fff;
+          font-size: 0.72em;
+          letter-spacing: 0.04em;
+          display: block;
+        }
+        .hero-headline-ltd {
+          color: var(--gold);
+          font-size: 0.65em;
+          font-weight: 400;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          font-family: var(--font-nav);
+          -webkit-text-fill-color: var(--gold);
+          vertical-align: middle;
+          margin-left: 0.15em;
+          opacity: 0.85;
+        }
+        @keyframes goldShimmer {
+          0%   { background-position: 0% center; }
+          100% { background-position: 200% center; }
         }
         .hero-para {
           font-size: clamp(0.95rem, 1.1vw, 1.1rem);
