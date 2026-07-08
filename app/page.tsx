@@ -407,25 +407,21 @@ export default function Home() {
 
   // Scroll-reveal: generic .reveal elements
   useEffect(() => {
-    const root = document.body;
-    const els = document.querySelectorAll(".reveal");
     const obs = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); }),
-      { root, threshold: 0.14 }
+      { threshold: 0.14 }
     );
-    els.forEach(el => obs.observe(el));
+    document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
     return () => obs.disconnect();
   }, []);
 
-  // 3D page-flip: subsidiary cards
+  // 3D page-flip: subsidiary cards — viewport root, fires when card snaps into view
   useEffect(() => {
-    const root = document.body;
-    const cards = document.querySelectorAll(".sub-card");
     const obs = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); }),
-      { root, threshold: 0.2 }
+      { threshold: 0.3 }
     );
-    cards.forEach(c => obs.observe(c));
+    document.querySelectorAll(".sub-card").forEach(c => obs.observe(c));
     return () => obs.disconnect();
   }, []);
 
@@ -815,8 +811,8 @@ export default function Home() {
         /* Gradient fade from navy into the building on the left edge */
         .hero-building-fade {
           position: absolute; top: 0; left: 0;
-          width: 70%; height: 100%;
-          background: linear-gradient(to right, var(--navy) 0%, rgba(8,21,34,0.9) 35%, rgba(8,21,34,0.5) 60%, transparent 100%);
+          width: 60%; height: 100%;
+          background: linear-gradient(to right, var(--navy) 0%, rgba(8,21,34,0.75) 40%, rgba(8,21,34,0.2) 70%, transparent 100%);
           pointer-events: none;
         }
 
@@ -893,8 +889,8 @@ export default function Home() {
           50%      { transform: translateY(5px); }
         }
         @media (max-width: 860px) {
-          .hero-building-panel { width: 100%; opacity: 0.75; }
-          .hero-building-fade { width: 100%; background: linear-gradient(to right, var(--navy) 0%, rgba(8,21,34,0.92) 38%, rgba(8,21,34,0.5) 65%, transparent 100%); }
+          .hero-building-panel { width: 100%; opacity: 1; }
+          .hero-building-fade { width: 100%; background: linear-gradient(to right, var(--navy) 0%, rgba(8,21,34,0.8) 35%, rgba(8,21,34,0.25) 65%, transparent 100%); }
           .hero-stats { grid-template-columns: repeat(2,1fr); max-width: 100%; }
           .stat-card:nth-child(2) { border-right: none; }
           .stat-card:nth-child(3),
