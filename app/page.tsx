@@ -658,8 +658,14 @@ export default function Home() {
           <div className="footer-col">
             <h4 className="footer-col-title">Quick Links</h4>
             <ul className="footer-list">
-              {["Home","About Us","Subsidiaries","Our Impact","News & Updates","Contact Us"].map(l => (
-                <li key={l}><a href="#">{l}</a></li>
+              {[
+                { label: "Home",          href: "#home" },
+                { label: "About Us",      href: "#about" },
+                { label: "Subsidiaries",  href: "#subsidiaries" },
+                { label: "Our Values",    href: "#impact" },
+                { label: "Contact Us",    href: "#contact" },
+              ].map(l => (
+                <li key={l.label}><a href={l.href}>{l.label}</a></li>
               ))}
             </ul>
           </div>
