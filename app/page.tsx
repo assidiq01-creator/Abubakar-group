@@ -74,7 +74,7 @@ const SUBSIDIARIES = [
     logo: "https://news.abubakarmall.com/wp-content/uploads/2024/11/Yerwa-Global-1.png",
     url: "https://news.abubakarmall.com",
     accent: "#C0392B",
-    imgBg: "linear-gradient(135deg,#1a0000 0%,#3d0a0a 50%,#1a0000 100%)",
+    imgBg: "linear-gradient(135deg,#0d0505 0%,#1e0a0a 50%,#0d0505 100%)",
     imgIcon: "📰",
   },
   {
@@ -83,10 +83,10 @@ const SUBSIDIARIES = [
     tag: "International Trade & Export Consulting",
     desc: "Based in Samsun, Turkey — specialising in import-export consulting, building materials, medical supplies, agro products and connecting West African entrepreneurs with global markets.",
     features: ["Export Consulting", "Agro Products", "Global Trade"],
-    logo: "https://commes-one.com/wp-content/uploads/2026/06/CSO-LOGO.jpeg",
+    logo: "https://commes-one.com/wp-content/uploads/2026/06/CSO-LOGO.png",
     url: "https://commes-one.com",
     accent: "#8B6914",
-    imgBg: "linear-gradient(135deg,#f5f0e8 0%,#e8e0d0 50%,#f5f0e8 100%)",
+    imgBg: "linear-gradient(135deg,#0a0f1a 0%,#1a2540 50%,#0a0f1a 100%)",
     imgIcon: "👗",
   },
   {
