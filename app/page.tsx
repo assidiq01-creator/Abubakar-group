@@ -609,7 +609,7 @@ export default function Home() {
                 Learn More →
               </a>
             </div>
-            <div className="sub-visual" style={{ background: s.imgBg }}>
+            <div className="sub-visual">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={s.logo} alt={s.name} className="sub-logo-img" />
               <div className="sub-icon-bg">{s.imgIcon}</div>
@@ -1146,6 +1146,10 @@ export default function Home() {
           border-radius: 14px; overflow: hidden;
           aspect-ratio: 4/3;
           display: flex; align-items: center; justify-content: center;
+          background: rgba(8,21,34,0.45);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255,255,255,0.08);
         }
         .sub-logo-img {
           max-width: 55%; max-height: 55%;
