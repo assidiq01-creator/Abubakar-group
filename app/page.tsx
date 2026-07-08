@@ -688,7 +688,6 @@ export default function Home() {
                 <a href="mailto:sales@abubakarmall.com">sales@abubakarmall.com</a>
               </li>
               <li>
-                <span className="contact-icon">🌐</span>
                 <a href="https://www.abubakarmall.com" target="_blank" rel="noopener noreferrer">www.abubakarmall.com</a>
               </li>
             </ul>
