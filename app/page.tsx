@@ -897,10 +897,7 @@ export default function Home() {
           color: rgba(8,21,34,0.42);
           text-shadow:
             0 -1px 0 rgba(255,255,255,0.22),
-            0 1px 3px rgba(0,0,0,0.5),
-            0 0 24px rgba(212,175,55,0.55),
-            0 0 60px rgba(212,175,55,0.25),
-            0 0 120px rgba(212,175,55,0.1);
+            0 1px 3px rgba(0,0,0,0.5);
         }
         .hero-headline-rule {
           display: flex; align-items: center; gap: 12px;
@@ -929,14 +926,13 @@ export default function Home() {
           color: rgba(8,21,34,0.35);
           text-shadow:
             0 -1px 0 rgba(255,255,255,0.18),
-            0 1px 2px rgba(0,0,0,0.4),
-            0 0 16px rgba(255,255,255,0.3);
+            0 1px 2px rgba(0,0,0,0.4);
           text-transform: uppercase;
           line-height: 1;
         }
         .hero-headline-dot {
           color: rgba(8,21,34,0.3);
-          text-shadow: 0 0 14px rgba(212,175,55,0.7), 0 -1px 0 rgba(212,175,55,0.4);
+          text-shadow: 0 -1px 0 rgba(212,175,55,0.3);
           font-weight: 400;
         }
         .hero-para {
