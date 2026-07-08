@@ -822,12 +822,12 @@ export default function Home() {
         }
         .hero-building-img {
           width: 100%; height: 100%;
-          object-fit: cover; object-position: center top;
+          object-fit: cover; object-position: center center;
         }
         /* Very light overlay — just enough for text legibility */
         .hero-building-fade {
           position: absolute; inset: 0;
-          background: linear-gradient(to right, rgba(8,21,34,0.82) 0%, rgba(8,21,34,0.55) 40%, rgba(8,21,34,0.22) 70%, rgba(8,21,34,0.1) 100%);
+          background: linear-gradient(to right, rgba(8,21,34,0.60) 0%, rgba(8,21,34,0.30) 30%, rgba(8,21,34,0.05) 55%, transparent 100%);
           pointer-events: none;
         }
 
