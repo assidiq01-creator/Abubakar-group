@@ -458,7 +458,7 @@ export default function Home() {
             ))}
           </ul>
 
-          <a href="mailto:info@abubakar-group.com" className="btn btn-gold">Get In Touch</a>
+          <a href="mailto:sales@abubakarmall.com" className="btn btn-gold">Get In Touch</a>
 
           <button className="nav-burger" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
             <span /><span /><span />
@@ -471,7 +471,7 @@ export default function Home() {
               <a key={l} href={l === "Home" ? "/" : `#${l.toLowerCase()}`}
                 className="nav-mobile-link" onClick={() => setMenuOpen(false)}>{l}</a>
             ))}
-            <a href="mailto:info@abubakar-group.com" className="btn btn-gold" style={{marginTop:"1rem"}}>Get In Touch</a>
+            <a href="mailto:sales@abubakarmall.com" className="btn btn-gold" style={{marginTop:"1rem"}}>Get In Touch</a>
           </div>
         )}
       </nav>
@@ -669,7 +669,7 @@ export default function Home() {
               </li>
               <li>
                 <span className="contact-icon">✉</span>
-                <a href="mailto:info@abubakarmall.com">info@abubakarmall.com</a>
+                <a href="mailto:sales@abubakarmall.com">sales@abubakarmall.com</a>
               </li>
               <li>
                 <span className="contact-icon">🌐</span>
