@@ -535,11 +535,9 @@ export default function Home() {
             </div>
 
             <h1 className="hero-headline reveal reveal-delay-1">
-              <span className="hero-glass-card">
-                <span className="hero-headline-gold">ABUBAKAR</span>
-                <span className="hero-headline-rule"><span className="hero-headline-rule-line" /><span className="hero-headline-est">EST. 2018</span><span className="hero-headline-rule-line" /></span>
-                <span className="hero-headline-group">GROUP <span className="hero-headline-dot">·</span> LTD.</span>
-              </span>
+              <span className="hero-headline-gold">ABUBAKAR</span>
+              <span className="hero-headline-rule"><span className="hero-headline-rule-line" /><span className="hero-headline-est">EST. 2018</span><span className="hero-headline-rule-line" /></span>
+              <span className="hero-headline-group">GROUP <span className="hero-headline-dot">·</span> LTD.</span>
             </h1>
 
             <p className="hero-para reveal reveal-delay-2">
@@ -891,32 +889,18 @@ export default function Home() {
           letter-spacing: -0.03em; color: #fff;
           margin-bottom: 1.6rem;
         }
-        .hero-glass-card {
-          display: inline-flex; flex-direction: column; align-items: flex-start;
-          padding: 1.6rem 2.2rem 1.4rem;
-          background: rgba(255,255,255,0.06);
-          backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-          border: 1px solid rgba(212,175,55,0.22);
-          border-radius: 16px;
-          box-shadow: 0 8px 48px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
-          position: relative; overflow: hidden;
-        }
-        .hero-glass-card::before {
-          content: '';
-          position: absolute; top: 0; left: 0; right: 0; height: 1px;
-          background: linear-gradient(to right, transparent, rgba(212,175,55,0.5), transparent);
-        }
         .hero-headline-gold {
-          background: linear-gradient(100deg, #F5D060 0%, #D4AF37 35%, #9A7B0A 60%, #F0C840 80%, #F5D060 100%);
-          background-size: 250% auto;
-          -webkit-background-clip: text; background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: goldShimmer 5s linear infinite;
-          filter: drop-shadow(0 2px 32px rgba(212,175,55,0.4));
           display: block;
           font-size: 1em;
-          letter-spacing: 0.06em;
+          letter-spacing: 0.08em;
           line-height: 1;
+          color: transparent;
+          -webkit-text-stroke: 1.5px rgba(240,200,64,0.9);
+          text-shadow:
+            0 0 40px rgba(212,175,55,0.35),
+            0 0 80px rgba(212,175,55,0.15),
+            0 2px 12px rgba(0,0,0,0.6);
+          position: relative;
         }
         .hero-headline-rule {
           display: flex; align-items: center; gap: 12px;
@@ -942,19 +926,16 @@ export default function Home() {
           font-size: 0.26em;
           font-weight: 700;
           letter-spacing: 0.38em;
-          color: rgba(255,255,255,0.88);
+          color: transparent;
+          -webkit-text-stroke: 1px rgba(255,255,255,0.55);
+          text-shadow: 0 0 20px rgba(255,255,255,0.12);
           text-transform: uppercase;
           line-height: 1;
         }
         .hero-headline-dot {
-          color: var(--gold);
-          opacity: 0.7;
+          color: transparent;
+          -webkit-text-stroke: 1px rgba(212,175,55,0.7);
           font-weight: 400;
-          -webkit-text-fill-color: var(--gold);
-        }
-        @keyframes goldShimmer {
-          0%   { background-position: 0% center; }
-          100% { background-position: 250% center; }
         }
         .hero-para {
           font-size: clamp(0.95rem, 1.1vw, 1.1rem);
