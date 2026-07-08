@@ -461,11 +461,11 @@ export default function Home() {
               { label: "About Us",      href: "#about" },
               { label: "Subsidiaries",  href: "#subsidiaries" },
               { label: "Our Impact",    href: "#impact" },
-              { label: "News",          href: "#news" },
+              { label: "News",          href: "https://news.abubakarmall.com", target: "_blank" },
               { label: "Contact",       href: "#contact" },
             ].map(l => (
               <li key={l.label}>
-                <a href={l.href} className="nav-link">{l.label}</a>
+                <a href={l.href} className="nav-link" {...(l.target ? { target: l.target, rel: "noopener noreferrer" } : {})}>{l.label}</a>
               </li>
             ))}
           </ul>
@@ -479,9 +479,17 @@ export default function Home() {
 
         {menuOpen && (
           <div className="nav-mobile">
-            {["Home","About","Subsidiaries","Impact","News","Contact"].map(l => (
-              <a key={l} href={l === "Home" ? "/" : `#${l.toLowerCase()}`}
-                className="nav-mobile-link" onClick={() => setMenuOpen(false)}>{l}</a>
+            {[
+              { label: "Home",         href: "/" },
+              { label: "About",        href: "#about" },
+              { label: "Subsidiaries", href: "#subsidiaries" },
+              { label: "Impact",       href: "#impact" },
+              { label: "News",         href: "https://news.abubakarmall.com", target: "_blank" },
+              { label: "Contact",      href: "#contact" },
+            ].map(l => (
+              <a key={l.label} href={l.href} className="nav-mobile-link"
+                {...(l.target ? { target: l.target, rel: "noopener noreferrer" } : {})}
+                onClick={() => setMenuOpen(false)}>{l.label}</a>
             ))}
             <a href="mailto:sales@abubakarmall.com" className="btn btn-gold" style={{marginTop:"1rem"}}>Get In Touch</a>
           </div>
