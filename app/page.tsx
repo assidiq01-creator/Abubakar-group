@@ -488,7 +488,7 @@ export default function Home() {
               { label: "Contact",       href: "#contact" },
             ].map(l => (
               <li key={l.label}>
-                <a href={l.href} className="nav-link" {...(l.target ? { target: l.target, rel: "noopener noreferrer" } : {})}>{l.label}</a>
+                <a href={l.href} className="nav-link">{l.label}</a>
               </li>
             ))}
           </ul>
