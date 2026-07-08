@@ -824,7 +824,7 @@ export default function Home() {
         /* Very light overlay — just enough for text legibility */
         .hero-building-fade {
           position: absolute; inset: 0;
-          background: rgba(8,21,34,0.35);
+          background: rgba(8,21,34,0.50);
           pointer-events: none;
         }
 
