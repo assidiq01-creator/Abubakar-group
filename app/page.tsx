@@ -87,7 +87,7 @@ const SUBSIDIARIES = [
     url: "https://commes-one.com",
     accent: "#8B6914",
     imgBg: "linear-gradient(135deg,#0a0f1a 0%,#1a2540 50%,#0a0f1a 100%)",
-    imgIcon: "👗",
+    imgIcon: "🚢",
   },
   {
     num: "08",
@@ -1146,10 +1146,9 @@ export default function Home() {
           border-radius: 14px; overflow: hidden;
           aspect-ratio: 4/3;
           display: flex; align-items: center; justify-content: center;
-          background: rgba(8,21,34,0.45);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border: 1px solid rgba(255,255,255,0.08);
+          background: linear-gradient(135deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 60%, rgba(212,175,55,0.04) 100%);
+          border: 1px solid rgba(255,255,255,0.12);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 8px 32px rgba(0,0,0,0.4);
         }
         .sub-logo-img {
           max-width: 55%; max-height: 55%;
