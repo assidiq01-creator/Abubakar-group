@@ -890,9 +890,10 @@ export default function Home() {
           display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0;
         }
         @media (max-width: 540px) {
+          .hero-left { padding-right: 2rem; }
           .hero-eyebrow {
             position: absolute;
-            right: 1rem;
+            right: 0.4rem;
             top: 72px;
             transform: none;
             writing-mode: vertical-lr;
