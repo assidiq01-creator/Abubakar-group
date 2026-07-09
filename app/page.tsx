@@ -1343,7 +1343,7 @@ export default function Home() {
 
         @media (max-width: 1000px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 540px)  {
-          .footer-inner { grid-template-columns: 1fr; gap: 1.2rem; padding-bottom: 1.8rem; }
+          .footer-inner { grid-template-columns: 1fr 1fr; gap: 1.2rem; padding-bottom: 1.8rem; }
           .footer-col-title { margin-bottom: 0.6rem; font-size: 0.44rem; }
           .footer-list { gap: 0.35rem; }
           .footer-list a { font-size: 0.55rem; }
