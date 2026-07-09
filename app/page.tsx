@@ -524,8 +524,11 @@ export default function Home() {
       <section className="hero" id="home">
         {/* Full-bleed building panel — right half, absolute positioned */}
         <div className="hero-building-panel" aria-hidden="true">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/hero-building.png" alt="" className="hero-building-img" />
+          <picture>
+            <source srcSet="/hero-building mobile.webp" media="(max-width: 540px)" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/hero-building.png" alt="" className="hero-building-img" />
+          </picture>
           <div className="hero-building-fade" />
         </div>
 
