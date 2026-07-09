@@ -989,6 +989,14 @@ export default function Home() {
           .stat-card:nth-child(3),
           .stat-card:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); }
         }
+        @media (max-width: 540px) {
+          .btn { font-size: 0.68rem; padding: 10px 18px; }
+          .hero-btns { gap: 0.6rem; margin-bottom: 2rem; }
+          .hero-stats { max-width: 100%; }
+          .stat-card { padding: 0.75rem 1rem; }
+          .stat-n { font-size: 1.25rem; }
+          .stat-l { font-size: 0.52rem; }
+        }
 
         /* ══ SECTION SHARED ══ */
         .section-label {
