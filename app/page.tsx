@@ -1344,10 +1344,13 @@ export default function Home() {
         @media (max-width: 1000px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 540px)  {
           .footer-inner { grid-template-columns: 1fr; gap: 1.2rem; padding-bottom: 1.8rem; }
-          .footer-col-title { margin-bottom: 0.6rem; }
+          .footer-col-title { margin-bottom: 0.6rem; font-size: 0.44rem; }
           .footer-list { gap: 0.35rem; }
+          .footer-list a { font-size: 0.55rem; }
           .footer-contact { gap: 0.5rem; }
-          .footer-tagline { margin-bottom: 0.8rem; }
+          .footer-contact li span:last-child, .footer-contact li a { font-size: 0.53rem; }
+          .footer-tagline { margin-bottom: 0.8rem; font-size: 0.55rem; }
+          .footer-bottom span, .footer-bottom-links a { font-size: 0.49rem; }
           .footer-bottom { flex-direction: column; text-align: center; }
           .hero-building-fade { background: rgba(8,21,34,0.75) !important; }
         }
