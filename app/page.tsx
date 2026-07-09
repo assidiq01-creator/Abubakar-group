@@ -996,13 +996,18 @@ export default function Home() {
           .stat-card { padding: 0.75rem 1rem; }
           .stat-n { font-size: 1.25rem; }
           .stat-l { font-size: 0.52rem; }
-          /* Slower flip on mobile so the animation is fully visible */
-          .sub-card {
+          /* overflow:hidden clips rotateY on mobile — use slide-up instead */
+          .sub-card, .sub-card--flip {
+            transform: translateY(48px);
+            transform-origin: center center;
             transition:
-              transform 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
               opacity   0.7s ease,
               box-shadow 0.3s;
-            transition-delay: 0.5s;
+            transition-delay: 0.3s;
+          }
+          .sub-card.visible, .sub-card--flip.visible {
+            transform: translateY(0) !important;
           }
         }
 
