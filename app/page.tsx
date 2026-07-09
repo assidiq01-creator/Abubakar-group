@@ -893,7 +893,7 @@ export default function Home() {
           .hero-eyebrow {
             position: absolute;
             right: 1rem;
-            top: 28%;
+            top: 80px;
             transform: none;
             writing-mode: vertical-lr;
             text-orientation: mixed;
