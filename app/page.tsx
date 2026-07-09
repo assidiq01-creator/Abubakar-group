@@ -889,6 +889,29 @@ export default function Home() {
         .eyebrow-line {
           display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0;
         }
+        @media (max-width: 540px) {
+          .hero-eyebrow {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0;
+            font-size: 0.5rem;
+            letter-spacing: 0.22em;
+            color: rgba(212,175,55,0.6);
+            z-index: 3;
+          }
+          .eyebrow-line {
+            width: 1px;
+            height: 28px;
+            background: linear-gradient(to bottom, transparent, rgba(212,175,55,0.4), transparent);
+          }
+        }
         .hero-headline {
           font-family: var(--font-display);
           font-size: clamp(2.24rem, 3.85vw, 5.25rem);
