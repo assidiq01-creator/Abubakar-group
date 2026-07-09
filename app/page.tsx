@@ -767,7 +767,7 @@ export default function Home() {
           height: 72px;
         }
         .nav-brand { flex-shrink: 0; }
-        .nav-logo { height: 38px; width: auto; object-fit: contain; display: block; }
+        .nav-logo { height: 56px; width: auto; object-fit: contain; display: block; }
         .nav-links {
           display: flex; gap: 2rem; list-style: none; margin-left: auto;
         }
@@ -1320,7 +1320,7 @@ export default function Home() {
           padding-bottom: 4rem;
         }
         .footer-logo {
-          height: 36px; width: auto; object-fit: contain;
+          height: 54px; width: auto; object-fit: contain;
           display: block; margin-bottom: 1.2rem;
           filter: brightness(1.1);
         }
