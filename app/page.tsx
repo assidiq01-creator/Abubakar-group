@@ -1238,6 +1238,7 @@ export default function Home() {
         }
         @media (max-width: 1100px) { .why-grid { grid-template-columns: repeat(3,1fr); } }
         @media (max-width: 640px) {
+          .why-section { height: auto; min-height: 100svh; overflow-y: auto; scroll-snap-align: start; }
           .why-grid { grid-template-columns: 1fr; gap: 12px; }
           .why-card { height: auto; min-height: 0; overflow: visible; padding: 1.4rem 1.2rem; }
         }
