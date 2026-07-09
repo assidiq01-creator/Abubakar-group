@@ -123,7 +123,7 @@ function HeroBuilding() {
     // Preload logo
     const img = new window.Image();
     img.crossOrigin = "anonymous";
-    img.src = "https://abubakarmall.com/wp-content/uploads/2025/04/ABUPNG.png";
+    img.src = "/group-logo.png";
     img.onload = () => { logoImgRef.current = img; };
 
     const canvas = canvasRef.current;
@@ -464,7 +464,7 @@ export default function Home() {
       <div className={`splash${loaded ? " splash--out" : ""}`} aria-hidden="true">
         <div className="splash-inner">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://abubakarmall.com/wp-content/uploads/2025/04/ABUPNG.png" alt="" className="splash-logo" />
+          <img src="/group-logo.png" alt="" className="splash-logo" />
           <div className="splash-bar"><div className="splash-fill" /></div>
           <p className="splash-tag">Abubakar Group Ltd.</p>
         </div>
@@ -476,7 +476,7 @@ export default function Home() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <a href="/" className="nav-brand">
             <img
-              src="https://abubakarmall.com/wp-content/uploads/2025/04/ABUPNG.png"
+              src="/group-logo.png"
               alt="Abubakar Group Ltd"
               className="nav-logo"
             />
@@ -671,7 +671,7 @@ export default function Home() {
           <div className="footer-col footer-col--brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://abubakarmall.com/wp-content/uploads/2025/04/ABUPNG.png"
+              src="/group-logo.png"
               alt="Abubakar Group Ltd"
               className="footer-logo"
             />
