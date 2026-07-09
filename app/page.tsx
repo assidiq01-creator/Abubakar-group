@@ -899,11 +899,10 @@ export default function Home() {
           font-size: 1em;
           letter-spacing: 0.08em;
           line-height: 1;
-          background: linear-gradient(170deg, #f5e070 0%, #d4af37 25%, #8a6e10 50%, #c09828 72%, #f0d848 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          filter: drop-shadow(0 3px 8px rgba(0,0,0,0.9)) drop-shadow(0 -1px 0 rgba(255,220,50,0.15));
+          color: rgba(255,255,255,0.38);
+          text-shadow:
+            0 -1px 0 rgba(255,255,255,0.55),
+            0 1px 3px rgba(0,0,0,0.6);
         }
         .hero-headline-rule {
           display: flex; align-items: center; gap: 12px;
@@ -929,11 +928,10 @@ export default function Home() {
           font-size: 0.26em;
           font-weight: 700;
           letter-spacing: 0.38em;
-          background: linear-gradient(170deg, #e8cc50 0%, #a07820 50%, #d4b030 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          filter: drop-shadow(0 2px 4px rgba(0,0,0,0.7));
+          color: rgba(255,255,255,0.32);
+          text-shadow:
+            0 -1px 0 rgba(255,255,255,0.45),
+            0 1px 2px rgba(0,0,0,0.5);
           text-transform: uppercase;
           line-height: 1;
         }
