@@ -767,7 +767,7 @@ export default function Home() {
           height: 72px;
         }
         .nav-brand { flex-shrink: 0; }
-        .nav-logo { height: 38px; width: auto; object-fit: contain; display: block; }
+        .nav-logo { height: 60px; width: auto; object-fit: contain; display: block; }
         .nav-links {
           display: flex; gap: 2rem; list-style: none; margin-left: auto;
         }
