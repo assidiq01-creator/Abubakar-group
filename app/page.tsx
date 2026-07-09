@@ -538,9 +538,11 @@ export default function Home() {
             </div>
 
             <h1 className="hero-headline reveal reveal-delay-1">
-              <span className="hero-headline-gold">ABUBAKAR</span>
-              <span className="hero-headline-rule"><span className="hero-headline-rule-line" /><span className="hero-headline-est">EST. 2018</span><span className="hero-headline-rule-line" /></span>
-              <span className="hero-headline-group">GROUP <span className="hero-headline-dot">·</span> LTD.</span>
+              <span className="hero-headline-border">
+                <span className="hero-headline-est-tag">EST. 2018</span>
+                <span className="hero-headline-gold">ABUBAKAR</span>
+                <span className="hero-headline-group">GROUP <span className="hero-headline-dot">·</span> LTD.</span>
+              </span>
             </h1>
 
             <p className="hero-para reveal reveal-delay-2">
@@ -894,6 +896,21 @@ export default function Home() {
           letter-spacing: -0.03em; color: #fff;
           margin-bottom: 1.6rem;
         }
+        .hero-headline-border {
+          display: block;
+          border-left: 2px solid rgba(212,175,55,0.35);
+          padding-left: 1.1rem;
+        }
+        .hero-headline-est-tag {
+          display: block;
+          font-family: var(--font-nav);
+          font-size: 0.13em;
+          font-weight: 700;
+          letter-spacing: 0.4em;
+          color: rgba(212,175,55,0.65);
+          text-transform: uppercase;
+          margin-bottom: 0.5rem;
+        }
         .hero-headline-gold {
           display: block;
           font-size: 1em;
@@ -903,24 +920,6 @@ export default function Home() {
           text-shadow:
             0 -1px 0 rgba(255,255,255,0.22),
             0 1px 3px rgba(0,0,0,0.5);
-        }
-        .hero-headline-rule {
-          display: flex; align-items: center; gap: 12px;
-          margin: 0.55rem 0 0.5rem;
-        }
-        .hero-headline-rule-line {
-          flex: 1; height: 1px;
-          background: linear-gradient(to right, transparent, rgba(212,175,55,0.5), transparent);
-          max-width: 80px;
-        }
-        .hero-headline-est {
-          font-family: var(--font-nav);
-          font-size: 0.13em;
-          font-weight: 600;
-          letter-spacing: 0.28em;
-          color: rgba(212,175,55,0.65);
-          text-transform: uppercase;
-          white-space: nowrap;
         }
         .hero-headline-group {
           display: block;
@@ -934,6 +933,7 @@ export default function Home() {
             0 1px 2px rgba(0,0,0,0.4);
           text-transform: uppercase;
           line-height: 1;
+          margin-top: 0.5rem;
         }
         .hero-headline-dot {
           font-weight: 400;
