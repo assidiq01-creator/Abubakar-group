@@ -714,7 +714,6 @@ export default function Home() {
             <ul className="footer-list footer-contact">
 
               <li>
-                <span className="contact-icon">✉</span>
                 <a href="mailto:sales@abubakarmall.com">sales@abubakarmall.com</a>
               </li>
               <li>
