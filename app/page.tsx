@@ -445,13 +445,16 @@ export default function Home() {
     return () => obs.disconnect();
   }, []);
 
-  // 3D page-flip: subsidiary cards — toggle on every enter/exit
+  // 3D page-flip: watch the parent sub-page section so snap-scroll doesn't flicker
   useEffect(() => {
     const obs = new IntersectionObserver(
-      entries => entries.forEach(e => { e.target.classList.toggle("visible", e.isIntersecting); }),
-      { threshold: 0.05 }
+      entries => entries.forEach(e => {
+        const card = e.target.querySelector(".sub-card") as HTMLElement | null;
+        if (card) card.classList.toggle("visible", e.isIntersecting);
+      }),
+      { threshold: 0.5 }
     );
-    document.querySelectorAll(".sub-card").forEach(c => obs.observe(c));
+    document.querySelectorAll(".sub-page").forEach(p => obs.observe(p));
     return () => obs.disconnect();
   }, []);
 
