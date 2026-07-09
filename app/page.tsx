@@ -899,10 +899,10 @@ export default function Home() {
           font-size: 1em;
           letter-spacing: 0.08em;
           line-height: 1;
-          color: rgba(160,185,205,0.36);
+          color: rgba(8,21,34,0.42);
           text-shadow:
-            0 -1px 0 rgba(255,255,255,0.18),
-            0 1px 3px rgba(0,0,0,0.55);
+            0 -1px 0 rgba(255,255,255,0.22),
+            0 1px 3px rgba(0,0,0,0.5);
         }
         .hero-headline-rule {
           display: flex; align-items: center; gap: 12px;
@@ -928,10 +928,10 @@ export default function Home() {
           font-size: 0.26em;
           font-weight: 700;
           letter-spacing: 0.38em;
-          color: rgba(160,185,205,0.30);
+          color: rgba(8,21,34,0.35);
           text-shadow:
-            0 -1px 0 rgba(255,255,255,0.15),
-            0 1px 2px rgba(0,0,0,0.5);
+            0 -1px 0 rgba(255,255,255,0.18),
+            0 1px 2px rgba(0,0,0,0.4);
           text-transform: uppercase;
           line-height: 1;
         }
