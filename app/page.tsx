@@ -1345,26 +1345,31 @@ export default function Home() {
         @media (max-width: 540px)  {
           .footer-inner {
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto auto;
-            gap: 1rem 1.4rem;
-            padding-bottom: 1.5rem;
+            gap: 0.8rem 1.2rem;
+            padding-bottom: 1.2rem;
           }
-          /* Brand spans full width on top */
-          .footer-col--brand { grid-column: 1 / -1; }
-          /* Our Companies spans full width and makes a 2-col list */
-          .footer-col:nth-child(3) { grid-column: 1 / -1; }
+          /* Row 1: brand full width */
+          .footer-col--brand { grid-column: 1 / -1; grid-row: 1; }
+          /* Row 2: Quick Links left, Contact Us right */
+          .footer-col:nth-child(2) { grid-column: 1; grid-row: 2; }
+          .footer-col:nth-child(4) { grid-column: 2; grid-row: 2; }
+          /* Row 3: Our Companies full width, 2-col list */
+          .footer-col:nth-child(3) { grid-column: 1 / -1; grid-row: 3; }
           .footer-col:nth-child(3) .footer-list {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem 1rem;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 0.8rem;
           }
-          .footer-col-title { margin-bottom: 0.5rem; font-size: 0.56rem; }
-          .footer-list { gap: 0.3rem; }
-          .footer-list a { font-size: 0.7rem; }
-          .footer-contact { gap: 0.45rem; }
-          .footer-contact li span:last-child, .footer-contact li a { font-size: 0.68rem; }
-          .footer-tagline { margin-bottom: 0.7rem; font-size: 0.7rem; }
-          .footer-bottom span, .footer-bottom-links a { font-size: 0.6rem; }
-          .footer-logo { height: 28px; margin-bottom: 0.6rem; }
-          .social-icon { width: 28px; height: 28px; font-size: 0.5rem; }
+          .footer-col-title { margin-bottom: 0.4rem; font-size: 0.52rem; }
+          .footer-list { gap: 0.25rem; }
+          .footer-list a { font-size: 0.62rem; }
+          .footer-contact { gap: 0.35rem; }
+          .footer-contact li { gap: 6px; }
+          .footer-contact li span:last-child, .footer-contact li a { font-size: 0.6rem; line-height: 1.4; }
+          .contact-icon { font-size: 0.65rem; }
+          .footer-tagline { margin-bottom: 0.6rem; font-size: 0.65rem; line-height: 1.5; }
+          .footer-bottom span, .footer-bottom-links a { font-size: 0.55rem; }
+          .footer-logo { height: 26px; margin-bottom: 0.5rem; }
+          .footer-socials { gap: 0.4rem; }
+          .social-icon { width: 26px; height: 26px; font-size: 0.48rem; }
           .footer-bottom { flex-direction: column; text-align: center; }
           .hero-building-fade { background: rgba(8,21,34,0.75) !important; }
         }
