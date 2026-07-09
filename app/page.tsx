@@ -995,18 +995,14 @@ export default function Home() {
           .stat-card { padding: 0.75rem 1rem; }
           .stat-n { font-size: 1.25rem; }
           .stat-l { font-size: 0.52rem; }
-          /* overflow:hidden clips rotateY on mobile — use slide-up instead */
-          .sub-card, .sub-card--flip {
-            transform: translateY(48px);
-            transform-origin: center center;
+          /* Allow 3D flip to show without clipping on mobile */
+          .sub-page { overflow: clip; }
+          .sub-card {
             transition:
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
               opacity   0.7s ease,
               box-shadow 0.3s;
-            transition-delay: 0.3s;
-          }
-          .sub-card.visible, .sub-card--flip.visible {
-            transform: translateY(0) !important;
+            transition-delay: 0.5s;
           }
         }
 
