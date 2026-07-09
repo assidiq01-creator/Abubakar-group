@@ -1316,6 +1316,7 @@ export default function Home() {
           font-size: 0.85rem; color: rgba(255,255,255,0.5);
           transition: color 0.2s;
         }
+        .footer-list a:visited { color: rgba(255,255,255,0.5); }
         .footer-list a:hover { color: var(--gold); }
         .footer-contact { gap: 1rem; }
         .footer-contact li { display: flex; gap: 10px; align-items: flex-start; }
