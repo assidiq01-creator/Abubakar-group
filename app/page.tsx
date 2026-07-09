@@ -471,7 +471,7 @@ export default function Home() {
       </div>
 
       {/* ── NAV ── */}
-      <nav ref={navRef} className="nav">
+      <nav ref={navRef} className="nav" style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.4s ease' }}>
         <div className="nav-inner">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <a href="/" className="nav-brand">
