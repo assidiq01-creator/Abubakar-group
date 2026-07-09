@@ -996,6 +996,14 @@ export default function Home() {
           .stat-card { padding: 0.75rem 1rem; }
           .stat-n { font-size: 1.25rem; }
           .stat-l { font-size: 0.52rem; }
+          /* Slower flip on mobile so the animation is fully visible */
+          .sub-card {
+            transition:
+              transform 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity   0.7s ease,
+              box-shadow 0.3s;
+            transition-delay: 0.25s;
+          }
         }
 
         /* ══ SECTION SHARED ══ */
