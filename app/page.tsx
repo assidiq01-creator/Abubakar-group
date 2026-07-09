@@ -1002,7 +1002,7 @@ export default function Home() {
               transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
               opacity   0.7s ease,
               box-shadow 0.3s;
-            transition-delay: 1s;
+            transition-delay: 2s;
           }
         }
 
