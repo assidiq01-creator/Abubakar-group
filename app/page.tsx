@@ -891,6 +891,7 @@ export default function Home() {
         }
         @media (max-width: 540px) {
           .hero-para { padding-right: 2rem; }
+          .hero-building-img { object-fit: contain; object-position: center top; }
           .hero-eyebrow {
             position: absolute;
             right: 0.4rem;
