@@ -763,11 +763,11 @@ export default function Home() {
         }
         .nav--hidden { opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
         .nav--scrolled {
-          background: rgba(8,21,34,0.97);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border-bottom-color: rgba(212,175,55,0.15);
-          box-shadow: 0 4px 40px rgba(0,0,0,0.4);
+          background: rgba(8,21,34,0.45);
+          backdrop-filter: blur(18px) saturate(1.4);
+          -webkit-backdrop-filter: blur(18px) saturate(1.4);
+          border-bottom-color: rgba(212,175,55,0.12);
+          box-shadow: 0 4px 32px rgba(0,0,0,0.25);
         }
         .nav-inner {
           max-width: var(--max-w); margin: 0 auto;
