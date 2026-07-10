@@ -453,6 +453,15 @@ export default function Home() {
     return () => obs.disconnect();
   }, []);
 
+  // Founder card tap-to-flip on touch devices
+  useEffect(() => {
+    const section = document.querySelector(".founder-section");
+    if (!section) return;
+    const toggle = () => section.classList.toggle("flipped");
+    section.addEventListener("click", toggle);
+    return () => section.removeEventListener("click", toggle);
+  }, []);
+
   // 3D page-flip: watch the parent sub-page section so snap-scroll doesn't flicker
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -668,6 +677,32 @@ export default function Home() {
               {["International Trade","Education","Technology","Real Estate","Consulting","E-Commerce"].map(t => (
                 <span key={t} className="about-tag">{t}</span>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOUNDER ── */}
+      <section className="founder-section" id="founder">
+        <div className="founder-flip-card">
+          <div className="founder-flip-inner">
+            {/* Front: full-cover photo */}
+            <div className="founder-front">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/founder-kaftan.png" alt="Founder" className="founder-img" />
+              <div className="founder-front-overlay">
+                <span className="founder-front-label">MEET THE FOUNDER</span>
+                <p className="founder-front-hint">Tap to learn more</p>
+              </div>
+            </div>
+            {/* Back: founder info */}
+            <div className="founder-back">
+              <div className="founder-back-content">
+                <span className="section-label" style={{ color: "var(--gold)" }}>FOUNDER & CEO</span>
+                <h2 className="founder-name">Abubakar Ibrahim Abubakar</h2>
+                <p className="founder-bio">Visionary entrepreneur and founder of Abubakar Group Ltd — driving diversified growth across trade, education, technology, and real estate spanning Africa, Turkey, and beyond.</p>
+                <div className="founder-quote">&ldquo;One vision. Multiple solutions. Endless possibilities.&rdquo;</div>
+              </div>
             </div>
           </div>
         </div>
@@ -1318,6 +1353,81 @@ export default function Home() {
         }
         .about-tag:hover { background: rgba(212,175,55,0.12); color: var(--gold-light); }
         @media (max-width: 720px) { .about-inner { grid-template-columns: 1fr; } }
+
+        /* ══ FOUNDER ══ */
+        .founder-section {
+          height: 100dvh; scroll-snap-align: start;
+          overflow: hidden; position: relative;
+          perspective: 1200px;
+        }
+        .founder-flip-card {
+          width: 100%; height: 100%;
+          perspective: 1200px;
+        }
+        .founder-flip-inner {
+          width: 100%; height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: transform 0.9s cubic-bezier(0.16,1,0.3,1);
+        }
+        .founder-section:hover .founder-flip-inner,
+        .founder-section.flipped .founder-flip-inner {
+          transform: rotateY(180deg);
+        }
+        .founder-front, .founder-back {
+          position: absolute; inset: 0;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+        }
+        .founder-front { background: var(--navy); }
+        .founder-img {
+          width: 100%; height: 100%;
+          object-fit: cover; object-position: center top;
+          display: block;
+        }
+        .founder-front-overlay {
+          position: absolute; inset: 0;
+          background: linear-gradient(to top, rgba(8,21,34,0.85) 0%, rgba(8,21,34,0.2) 50%, transparent 100%);
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: flex-end;
+          padding: 3rem 2rem;
+        }
+        .founder-front-label {
+          font-family: var(--font-nav); font-size: 0.7rem;
+          font-weight: 700; letter-spacing: 0.3em;
+          color: var(--gold); text-transform: uppercase;
+          margin-bottom: 0.5rem;
+        }
+        .founder-front-hint {
+          font-size: 0.8rem; color: rgba(255,255,255,0.5);
+          letter-spacing: 0.1em;
+        }
+        .founder-back {
+          background: var(--navy-mid);
+          transform: rotateY(180deg);
+          display: flex; align-items: center; justify-content: center;
+          padding: clamp(2rem,8vw,6rem);
+        }
+        .founder-back-content { max-width: 640px; }
+        .founder-name {
+          font-family: var(--font-display); font-size: clamp(2rem,5vw,3.5rem);
+          color: #fff; line-height: 1.1; margin: 1rem 0 1.5rem;
+        }
+        .founder-bio {
+          color: rgba(255,255,255,0.7); font-size: clamp(0.9rem,2vw,1.1rem);
+          line-height: 1.7; margin-bottom: 2rem;
+        }
+        .founder-quote {
+          font-family: var(--font-display); font-style: italic;
+          font-size: clamp(1rem,2.5vw,1.4rem);
+          color: var(--gold); opacity: 0.9; line-height: 1.5;
+          border-left: 2px solid rgba(212,175,55,0.4); padding-left: 1.2rem;
+        }
+        @media (max-width: 540px) {
+          .founder-section { height: calc(100svh - 82px); scroll-margin-top: 82px; }
+          .founder-back { padding: 2rem 1.5rem; }
+          .founder-front-hint { display: none; }
+        }
 
         /* ══ FOOTER ══ */
         .footer {
