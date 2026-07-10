@@ -627,7 +627,7 @@ export default function Home() {
             </div>
             <div className="sub-visual">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={s.logo} alt={s.name} className="sub-logo-img" />
+              <img src={s.logo} alt={s.name} className={`sub-logo-img${s.num === "01" ? " sub-logo-img--lg" : ""}`} />
               <div className="sub-icon-bg">{s.imgIcon}</div>
             </div>
           </div>
@@ -1214,8 +1214,9 @@ export default function Home() {
           border: 1px solid rgba(200,215,230,0.25);
           box-shadow: inset 0 1px 0 rgba(220,230,240,0.2), inset 0 -1px 0 rgba(80,100,120,0.15), 0 8px 32px rgba(0,0,0,0.45);
         }
+        .sub-logo-img { max-width: 55%; max-height: 55%; }
+        .sub-logo-img--lg { max-width: 80%; max-height: 80%; }
         .sub-logo-img {
-          max-width: 55%; max-height: 55%;
           object-fit: contain; position: relative; z-index: 2;
           filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
         }
