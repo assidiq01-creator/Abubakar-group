@@ -893,6 +893,7 @@ export default function Home() {
           display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0;
         }
         @media (max-width: 540px) {
+          .nav-logo { height: 30px; }
           .hero-para { padding-right: 2rem; }
           .hero-building-panel { height: 100%; }
           .hero-building-img { object-fit: contain; object-position: center top; }
