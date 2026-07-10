@@ -1405,16 +1405,37 @@ export default function Home() {
           object-fit: contain; display: block;
         }
         @media (max-width: 540px) {
-          .founder-section { height: calc(100svh - 82px); padding: 82px 0 0 0; align-items: stretch; }
+          .founder-section {
+            height: calc(100svh - 82px); padding: 82px 0 0 0;
+            align-items: stretch; position: relative;
+          }
           .founder-card {
-            grid-template-columns: 1fr; grid-template-rows: auto 1fr;
-            border-radius: 0; flex: 1;
+            display: block; position: relative;
+            border-radius: 0; border: none; box-shadow: none;
+            background: transparent;
             width: 100%; height: 100%; max-width: 100%;
-            padding: 1.5rem 1.2rem 0; gap: 1rem;
+            padding: 0; gap: 0;
             transition-delay: 0.5s;
           }
-          .founder-photo { flex: 1; min-height: 0; border-radius: 0; margin: 0 -1.2rem; }
-          .founder-img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+          .founder-photo {
+            position: absolute; inset: 0;
+            border-radius: 0; margin: 0; overflow: hidden;
+          }
+          .founder-img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center top;
+          }
+          .founder-photo::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(8,21,34,0.96) 0%, rgba(8,21,34,0.75) 45%, rgba(8,21,34,0.2) 75%, transparent 100%);
+          }
+          .founder-info {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 2rem 1.4rem 2.5rem; z-index: 2;
+          }
+          .founder-name { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+          .founder-bio { font-size: 0.85rem; margin: 0.6rem 0; }
+          .founder-quote { font-size: 0.85rem; }
         }
 
         /* ══ FOOTER ══ */
