@@ -1040,7 +1040,7 @@ export default function Home() {
           .stat-n { font-size: 1.25rem; }
           .stat-l { font-size: 0.52rem; }
           /* Allow 3D flip to show without clipping on mobile */
-          .sub-page { overflow: clip; height: calc(100vh - 72px); }
+          .sub-page { overflow: clip; height: calc(100svh - 72px); scroll-margin-top: 72px; }
           .sub-card {
             transition:
               transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
