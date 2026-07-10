@@ -833,7 +833,7 @@ export default function Home() {
                   <h3>6. Changes to This Policy</h3>
                   <p>We may update this Privacy Policy from time to time. Continued use of this website after changes constitutes acceptance of the updated policy.</p>
                   <h3>7. Contact</h3>
-                  <p>For privacy-related questions, contact us at <a href="mailto:info@abubakargroup.com">info@abubakargroup.com</a>.</p>
+                  <p>For privacy-related questions, contact us at <a href="mailto:sales@abubakarmall.com">sales@abubakarmall.com</a>.</p>
                 </div>
               </>
             ) : (
@@ -854,7 +854,7 @@ export default function Home() {
                   <h3>6. Governing Law</h3>
                   <p>These terms are governed by the laws of the Federal Republic of Nigeria. Any disputes shall be subject to the exclusive jurisdiction of Nigerian courts.</p>
                   <h3>7. Contact</h3>
-                  <p>For questions regarding these terms, contact us at <a href="mailto:info@abubakargroup.com">info@abubakargroup.com</a>.</p>
+                  <p>For questions regarding these terms, contact us at <a href="mailto:sales@abubakarmall.com">sales@abubakarmall.com</a>.</p>
                 </div>
               </>
             )}
