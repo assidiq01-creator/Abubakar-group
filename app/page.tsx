@@ -1361,7 +1361,7 @@ export default function Home() {
           overflow: hidden; position: relative;
           background: var(--navy-mid);
           display: flex; align-items: center; justify-content: center;
-          perspective: 2400px; padding: clamp(2rem,5vw,4rem) var(--pad);
+          perspective: 2400px; padding: clamp(5rem,8vw,6rem) var(--pad) clamp(2rem,5vw,4rem);
         }
         .founder-card {
           display: grid; grid-template-columns: 1fr 1fr;
