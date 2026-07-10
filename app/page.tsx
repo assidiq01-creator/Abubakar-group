@@ -654,6 +654,22 @@ export default function Home() {
         </section>
       ))}
 
+      {/* ── FOUNDER ── */}
+      <section className="founder-section" id="founder">
+        <div className="founder-card">
+          <div className="founder-info">
+            <span className="section-label" style={{ color: "var(--gold)" }}>FOUNDER &amp; CEO</span>
+            <h2 className="founder-name">Abubakar Ibrahim <span style={{textTransform:'uppercase'}}>Abubakar</span></h2>
+            <p className="founder-bio">Visionary entrepreneur and founder of Abubakar Group Ltd — driving diversified growth across trade, education, technology, and real estate spanning Africa, Turkey, and beyond.</p>
+            <div className="founder-quote">&ldquo;One vision. Multiple solutions. Endless possibilities.&rdquo;</div>
+          </div>
+          <div className="founder-photo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/founder-kaftan.png" alt="Founder" className="founder-img" />
+          </div>
+        </div>
+      </section>
+
       {/* ── WHY CHOOSE ── */}
       <section className="why-section" id="impact">
         <div className="why-inner">
@@ -689,22 +705,6 @@ export default function Home() {
                 <span key={t} className="about-tag">{t}</span>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FOUNDER ── */}
-      <section className="founder-section" id="founder">
-        <div className="founder-card">
-          <div className="founder-info">
-            <span className="section-label" style={{ color: "var(--gold)" }}>FOUNDER &amp; CEO</span>
-            <h2 className="founder-name">Abubakar Ibrahim <span style={{textTransform:'uppercase'}}>Abubakar</span></h2>
-            <p className="founder-bio">Visionary entrepreneur and founder of Abubakar Group Ltd — driving diversified growth across trade, education, technology, and real estate spanning Africa, Turkey, and beyond.</p>
-            <div className="founder-quote">&ldquo;One vision. Multiple solutions. Endless possibilities.&rdquo;</div>
-          </div>
-          <div className="founder-photo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/founder-kaftan.png" alt="Founder" className="founder-img" />
           </div>
         </div>
       </section>
@@ -1407,12 +1407,14 @@ export default function Home() {
         @media (max-width: 540px) {
           .founder-section { height: calc(100svh - 82px); padding: 82px 0 0 0; align-items: stretch; }
           .founder-card {
-            grid-template-columns: 1fr; border-radius: 0; flex: 1;
+            grid-template-columns: 1fr; grid-template-rows: auto 1fr;
+            border-radius: 0; flex: 1;
             width: 100%; height: 100%; max-width: 100%;
-            padding: 1.5rem 1.2rem; gap: 1rem;
+            padding: 1.5rem 1.2rem 0; gap: 1rem;
             transition-delay: 0.5s;
           }
-          .founder-photo { aspect-ratio: 16/9; }
+          .founder-photo { aspect-ratio: unset; flex: 1; min-height: 0; border-radius: 0; margin: 0 -1.2rem; }
+          .founder-img { object-position: center top; }
         }
 
         /* ══ FOOTER ══ */
