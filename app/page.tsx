@@ -426,13 +426,21 @@ export default function Home() {
     return () => clearTimeout(t);
   }, []);
 
-  // Nav transparency → solid on scroll
+  // Nav transparency → solid on scroll; hide on mobile while scrolling
   useEffect(() => {
     const nav = navRef.current;
     if (!nav) return;
-    const onScroll = () => nav.classList.toggle("nav--scrolled", window.scrollY > 60);
+    let scrollTimer: ReturnType<typeof setTimeout>;
+    const onScroll = () => {
+      nav.classList.toggle("nav--scrolled", window.scrollY > 60);
+      if (window.innerWidth <= 540) {
+        nav.classList.add("nav--hidden");
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => nav.classList.remove("nav--hidden"), 400);
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => { window.removeEventListener("scroll", onScroll); clearTimeout(scrollTimer); };
   }, []);
 
   // Scroll-reveal: generic .reveal elements
@@ -753,6 +761,7 @@ export default function Home() {
           transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
           border-bottom: 1px solid transparent;
         }
+        .nav--hidden { opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
         .nav--scrolled {
           background: rgba(8,21,34,0.97);
           backdrop-filter: blur(20px);
