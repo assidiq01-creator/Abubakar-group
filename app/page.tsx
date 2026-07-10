@@ -420,6 +420,7 @@ export default function Home() {
   const navRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [modal, setModal] = useState<"privacy" | "terms" | null>(null);
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 1800);
@@ -803,11 +804,63 @@ export default function Home() {
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Abubakar Group Ltd. All Rights Reserved.</span>
           <div className="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <button onClick={() => setModal("privacy")}>Privacy Policy</button>
+            <button onClick={() => setModal("terms")}>Terms of Service</button>
           </div>
         </div>
       </footer>
+
+      {/* ── MODALS ── */}
+      {modal && (
+        <div className="modal-backdrop" onClick={() => setModal(null)}>
+          <div className="modal-box" onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setModal(null)} aria-label="Close">✕</button>
+            {modal === "privacy" ? (
+              <>
+                <h2 className="modal-title">Privacy Policy</h2>
+                <p className="modal-date">Last updated: June 2026</p>
+                <div className="modal-body">
+                  <h3>1. Information We Collect</h3>
+                  <p>Abubakar Group Ltd does not require account registration to browse this website. We do not collect your name, email, or personal details unless you contact us directly via our contact form or email.</p>
+                  <h3>2. How We Use Your Data</h3>
+                  <p>Any information you submit through our contact form is used solely to respond to your enquiry. We do not sell, share, or retain your data beyond what is necessary.</p>
+                  <h3>3. Cookies</h3>
+                  <p>This website may use essential cookies to ensure proper functionality. We do not use tracking cookies or third-party analytics without your consent.</p>
+                  <h3>4. Third-Party Links</h3>
+                  <p>Our website may contain links to our subsidiary companies and partners. We are not responsible for the privacy practices of those external sites.</p>
+                  <h3>5. Data Security</h3>
+                  <p>We take reasonable measures to protect data in transit using HTTPS encryption. However, no method of transmission over the internet is 100% secure.</p>
+                  <h3>6. Changes to This Policy</h3>
+                  <p>We may update this Privacy Policy from time to time. Continued use of this website after changes constitutes acceptance of the updated policy.</p>
+                  <h3>7. Contact</h3>
+                  <p>For privacy-related questions, contact us at <a href="mailto:info@abubakargroup.com">info@abubakargroup.com</a>.</p>
+                </div>
+              </>
+            ) : (
+              <>
+                <h2 className="modal-title">Terms of Service</h2>
+                <p className="modal-date">Last updated: June 2026</p>
+                <div className="modal-body">
+                  <h3>1. Acceptance of Terms</h3>
+                  <p>By accessing and using this website, you accept and agree to be bound by these Terms of Service. If you do not agree, please do not use this site.</p>
+                  <h3>2. Use of Content</h3>
+                  <p>All content on this website — including text, images, logos, and graphics — is the property of Abubakar Group Ltd and is protected by applicable copyright and intellectual property laws. Reproduction or distribution without prior written permission is strictly prohibited.</p>
+                  <h3>3. Intellectual Property</h3>
+                  <p>The Abubakar Group Ltd name, logo, and all related marks are trademarks of Abubakar Group Ltd. You may not use them without express written permission.</p>
+                  <h3>4. Disclaimer</h3>
+                  <p>This website is provided "as is" without warranties of any kind. We do not guarantee the accuracy, completeness, or availability of any information presented.</p>
+                  <h3>5. Limitation of Liability</h3>
+                  <p>Abubakar Group Ltd shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this website.</p>
+                  <h3>6. Governing Law</h3>
+                  <p>These terms are governed by the laws of the Federal Republic of Nigeria. Any disputes shall be subject to the exclusive jurisdiction of Nigerian courts.</p>
+                  <h3>7. Contact</h3>
+                  <p>For questions regarding these terms, contact us at <a href="mailto:info@abubakargroup.com">info@abubakargroup.com</a>.</p>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* ── ALL STYLES ── */}
       <style jsx global>{`
@@ -1524,11 +1577,40 @@ export default function Home() {
           display: flex; justify-content: space-between; align-items: center;
           flex-wrap: wrap; gap: 1rem;
         }
-        .footer-bottom span, .footer-bottom-links a {
+        .footer-bottom span, .footer-bottom-links a, .footer-bottom-links button {
           font-size: 0.75rem; color: rgba(255,255,255,0.3);
         }
         .footer-bottom-links { display: flex; gap: 1.5rem; }
-        .footer-bottom-links a:hover { color: var(--gold); }
+        .footer-bottom-links a:hover, .footer-bottom-links button:hover { color: var(--gold); }
+        .footer-bottom-links button { background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; }
+
+        /* ── MODALS ── */
+        .modal-backdrop {
+          position: fixed; inset: 0; z-index: 9999;
+          background: rgba(8,21,34,0.85); backdrop-filter: blur(6px);
+          display: flex; align-items: center; justify-content: center;
+          padding: 1.5rem;
+        }
+        .modal-box {
+          background: var(--navy-light); border: 1px solid rgba(212,175,55,0.2);
+          border-radius: 16px; width: 100%; max-width: 680px;
+          max-height: 85vh; overflow-y: auto;
+          padding: 2.5rem 2rem 2rem; position: relative;
+          box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+        }
+        .modal-close {
+          position: absolute; top: 1.2rem; right: 1.2rem;
+          background: none; border: none; cursor: pointer;
+          color: rgba(255,255,255,0.4); font-size: 1.1rem; line-height: 1;
+          pointer-events: auto;
+        }
+        .modal-close:hover { color: var(--gold); }
+        .modal-title { font-family: var(--font-display); font-size: clamp(1.4rem,3vw,1.9rem); color: var(--white); margin-bottom: 0.3rem; }
+        .modal-date { font-size: 0.75rem; color: var(--muted); margin-bottom: 1.5rem; }
+        .modal-body { display: flex; flex-direction: column; gap: 1.2rem; }
+        .modal-body h3 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-top: 0.4rem; }
+        .modal-body p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.7; }
+        .modal-body a { color: var(--gold); text-decoration: underline; pointer-events: auto; }
 
         @media (max-width: 1000px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 540px)  {
