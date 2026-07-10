@@ -699,7 +699,7 @@ export default function Home() {
             <div className="founder-back">
               <div className="founder-back-content">
                 <span className="section-label" style={{ color: "var(--gold)" }}>FOUNDER & CEO</span>
-                <h2 className="founder-name">Abubakar Ibrahim Abubakar</h2>
+                <h2 className="founder-name">Abubakar Ibrahim <span style={{textTransform:'uppercase'}}>Abubakar</span></h2>
                 <p className="founder-bio">Visionary entrepreneur and founder of Abubakar Group Ltd — driving diversified growth across trade, education, technology, and real estate spanning Africa, Turkey, and beyond.</p>
                 <div className="founder-quote">&ldquo;One vision. Multiple solutions. Endless possibilities.&rdquo;</div>
               </div>
