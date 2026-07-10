@@ -1398,11 +1398,11 @@ export default function Home() {
         }
         .founder-photo {
           border-radius: 14px; overflow: hidden;
-          aspect-ratio: 3/4; position: relative;
+          display: flex; align-items: flex-end; justify-content: center;
         }
         .founder-img {
-          width: 100%; height: 100%;
-          object-fit: cover; object-position: center top; display: block;
+          width: 100%; height: auto;
+          object-fit: contain; display: block;
         }
         @media (max-width: 540px) {
           .founder-section { height: calc(100svh - 82px); padding: 82px 0 0 0; align-items: stretch; }
@@ -1413,8 +1413,8 @@ export default function Home() {
             padding: 1.5rem 1.2rem 0; gap: 1rem;
             transition-delay: 0.5s;
           }
-          .founder-photo { aspect-ratio: unset; flex: 1; min-height: 0; border-radius: 0; margin: 0 -1.2rem; }
-          .founder-img { object-position: center top; }
+          .founder-photo { flex: 1; min-height: 0; border-radius: 0; margin: 0 -1.2rem; }
+          .founder-img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
         }
 
         /* ══ FOOTER ══ */
