@@ -856,7 +856,7 @@ export default function Home() {
 
         /* ══ HERO ══ */
         .hero {
-          height: 100svh;
+          height: 100dvh;
           scroll-snap-align: start;
           background: var(--navy);
           display: flex; flex-direction: column;
@@ -1040,7 +1040,7 @@ export default function Home() {
           .stat-n { font-size: 1.25rem; }
           .stat-l { font-size: 0.52rem; }
           /* Allow 3D flip to show without clipping on mobile */
-          .sub-page { overflow: clip; height: calc(100svh - 72px - env(safe-area-inset-bottom, 0px)); scroll-margin-top: 72px; padding: 0; align-items: stretch; justify-content: stretch; }
+          .sub-page { overflow: clip; height: calc(100dvh - 72px); scroll-margin-top: 72px; padding: 0; align-items: stretch; justify-content: stretch; }
           .sub-card {
             width: 100%; height: 100%;
             max-width: 100%; border-radius: 0;
@@ -1077,7 +1077,7 @@ export default function Home() {
 
         /* ══ SUBSIDIARIES ══ */
         .subs-intro {
-          height: 100vh;
+          height: 100dvh;
           scroll-snap-align: start;
           overflow: hidden;
           padding: var(--pad);
@@ -1097,7 +1097,7 @@ export default function Home() {
           animation: bounceX 1.8s ease-in-out infinite;
         }
         .sub-page {
-          height: 100vh;
+          height: 100dvh;
           scroll-snap-align: start;
           overflow: hidden;
           padding: clamp(2rem, 5vh, 4rem) var(--pad);
@@ -1235,7 +1235,7 @@ export default function Home() {
 
         /* ══ WHY CHOOSE ══ */
         .why-section {
-          height: 100vh;
+          height: 100dvh;
           scroll-snap-align: start;
           background: var(--navy);
           padding: clamp(3rem, 6vh, 5rem) var(--pad);
@@ -1280,14 +1280,14 @@ export default function Home() {
         }
         @media (max-width: 1100px) { .why-grid { grid-template-columns: repeat(3,1fr); } }
         @media (max-width: 640px) {
-          .why-section { height: auto; min-height: 100svh; overflow-y: auto; scroll-snap-align: start; }
+          .why-section { height: auto; min-height: 100dvh; overflow-y: auto; scroll-snap-align: start; }
           .why-grid { grid-template-columns: 1fr; gap: 12px; }
           .why-card { height: auto; min-height: 0; overflow: visible; padding: 1.4rem 1.2rem; }
         }
 
         /* ══ ABOUT ══ */
         .about-section {
-          height: 100vh;
+          height: 100dvh;
           scroll-snap-align: start;
           overflow: hidden;
           padding: clamp(3rem, 6vh, 5rem) var(--pad);
@@ -1320,7 +1320,7 @@ export default function Home() {
 
         /* ══ FOOTER ══ */
         .footer {
-          height: 100vh;
+          height: 100dvh;
           scroll-snap-align: start;
           overflow: hidden;
           background: var(--navy);
