@@ -459,13 +459,18 @@ export default function Home() {
     return () => obs.disconnect();
   }, []);
 
-  // Founder card tap-to-flip on touch devices
+  // Founder card scroll-flip (same pattern as subsidiary cards)
   useEffect(() => {
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        const card = e.target.querySelector(".founder-card") as HTMLElement | null;
+        if (card) card.classList.toggle("visible", e.isIntersecting);
+      }),
+      { threshold: 0.5 }
+    );
     const section = document.querySelector(".founder-section");
-    if (!section) return;
-    const toggle = () => section.classList.toggle("flipped");
-    section.addEventListener("click", toggle);
-    return () => section.removeEventListener("click", toggle);
+    if (section) obs.observe(section);
+    return () => obs.disconnect();
   }, []);
 
   // 3D page-flip: watch the parent sub-page section so snap-scroll doesn't flicker
@@ -690,26 +695,16 @@ export default function Home() {
 
       {/* ── FOUNDER ── */}
       <section className="founder-section" id="founder">
-        <div className="founder-flip-card">
-          <div className="founder-flip-inner">
-            {/* Front: full-cover photo */}
-            <div className="founder-front">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/founder-kaftan.png" alt="Founder" className="founder-img" />
-              <div className="founder-front-overlay">
-                <span className="founder-front-label">MEET THE FOUNDER</span>
-                <p className="founder-front-hint">Tap to learn more</p>
-              </div>
-            </div>
-            {/* Back: founder info */}
-            <div className="founder-back">
-              <div className="founder-back-content">
-                <span className="section-label" style={{ color: "var(--gold)" }}>FOUNDER & CEO</span>
-                <h2 className="founder-name">Abubakar Ibrahim <span style={{textTransform:'uppercase'}}>Abubakar</span></h2>
-                <p className="founder-bio">Visionary entrepreneur and founder of Abubakar Group Ltd — driving diversified growth across trade, education, technology, and real estate spanning Africa, Turkey, and beyond.</p>
-                <div className="founder-quote">&ldquo;One vision. Multiple solutions. Endless possibilities.&rdquo;</div>
-              </div>
-            </div>
+        <div className="founder-card">
+          <div className="founder-info">
+            <span className="section-label" style={{ color: "var(--gold)" }}>FOUNDER &amp; CEO</span>
+            <h2 className="founder-name">Abubakar Ibrahim <span style={{textTransform:'uppercase'}}>Abubakar</span></h2>
+            <p className="founder-bio">Visionary entrepreneur and founder of Abubakar Group Ltd — driving diversified growth across trade, education, technology, and real estate spanning Africa, Turkey, and beyond.</p>
+            <div className="founder-quote">&ldquo;One vision. Multiple solutions. Endless possibilities.&rdquo;</div>
+          </div>
+          <div className="founder-photo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/founder-kaftan.png" alt="Founder" className="founder-img" />
           </div>
         </div>
       </section>
@@ -1364,75 +1359,60 @@ export default function Home() {
         .founder-section {
           height: 100dvh; scroll-snap-align: start;
           overflow: hidden; position: relative;
-          perspective: 1200px;
-        }
-        .founder-flip-card {
-          width: 100%; height: 100%;
-          perspective: 1200px;
-        }
-        .founder-flip-inner {
-          width: 100%; height: 100%;
-          position: relative;
-          transform-style: preserve-3d;
-          transition: transform 0.9s cubic-bezier(0.16,1,0.3,1);
-        }
-        .founder-section:hover .founder-flip-inner,
-        .founder-section.flipped .founder-flip-inner {
-          transform: rotateY(180deg);
-        }
-        .founder-front, .founder-back {
-          position: absolute; inset: 0;
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden;
-        }
-        .founder-front { background: var(--navy); }
-        .founder-img {
-          width: 100%; height: 100%;
-          object-fit: cover; object-position: center top;
-          display: block;
-        }
-        .founder-front-overlay {
-          position: absolute; inset: 0;
-          background: linear-gradient(to top, rgba(8,21,34,0.85) 0%, rgba(8,21,34,0.2) 50%, transparent 100%);
-          display: flex; flex-direction: column;
-          align-items: center; justify-content: flex-end;
-          padding: 3rem 2rem;
-        }
-        .founder-front-label {
-          font-family: var(--font-nav); font-size: 0.7rem;
-          font-weight: 700; letter-spacing: 0.3em;
-          color: var(--gold); text-transform: uppercase;
-          margin-bottom: 0.5rem;
-        }
-        .founder-front-hint {
-          font-size: 0.8rem; color: rgba(255,255,255,0.5);
-          letter-spacing: 0.1em;
-        }
-        .founder-back {
           background: var(--navy-mid);
-          transform: rotateY(180deg);
           display: flex; align-items: center; justify-content: center;
-          padding: clamp(2rem,8vw,6rem);
+          perspective: 2400px; padding: clamp(2rem,5vw,4rem) var(--pad);
         }
-        .founder-back-content { max-width: 640px; }
+        .founder-card {
+          display: grid; grid-template-columns: 1fr 1fr;
+          gap: clamp(2rem,5vw,5rem); align-items: center;
+          padding: clamp(2rem,4vw,3.5rem);
+          background: var(--navy-light);
+          border: 1px solid rgba(212,175,55,0.15);
+          border-radius: 20px;
+          box-shadow: 0 8px 60px rgba(0,0,0,0.4);
+          width: 100%; max-width: 1100px;
+          transform-origin: left center;
+          transform: perspective(2400px) rotateY(-70deg);
+          opacity: 0;
+          transition: transform 1.2s cubic-bezier(0.16,1,0.3,1), opacity 0.7s ease;
+        }
+        .founder-card.visible {
+          transform: perspective(2400px) rotateY(0deg);
+          opacity: 1;
+        }
+        .founder-info { display: flex; flex-direction: column; gap: 1.2rem; }
         .founder-name {
-          font-family: var(--font-display); font-size: clamp(2rem,5vw,3.5rem);
-          color: #fff; line-height: 1.1; margin: 1rem 0 1.5rem;
+          font-family: var(--font-display); font-size: clamp(1.8rem,4vw,3rem);
+          color: #fff; line-height: 1.1; margin: 0.5rem 0;
         }
         .founder-bio {
-          color: rgba(255,255,255,0.7); font-size: clamp(0.9rem,2vw,1.1rem);
-          line-height: 1.7; margin-bottom: 2rem;
+          color: rgba(255,255,255,0.7); font-size: clamp(0.85rem,1.5vw,1rem);
+          line-height: 1.7;
         }
         .founder-quote {
           font-family: var(--font-display); font-style: italic;
-          font-size: clamp(1rem,2.5vw,1.4rem);
-          color: var(--gold); opacity: 0.9; line-height: 1.5;
+          font-size: clamp(0.9rem,1.8vw,1.2rem);
+          color: var(--gold); line-height: 1.5;
           border-left: 2px solid rgba(212,175,55,0.4); padding-left: 1.2rem;
         }
+        .founder-photo {
+          border-radius: 14px; overflow: hidden;
+          aspect-ratio: 3/4; position: relative;
+        }
+        .founder-img {
+          width: 100%; height: 100%;
+          object-fit: cover; object-position: center top; display: block;
+        }
         @media (max-width: 540px) {
-          .founder-section { height: calc(100svh - 82px); scroll-margin-top: 82px; }
-          .founder-back { padding: 2rem 1.5rem; }
-          .founder-front-hint { display: none; }
+          .founder-section { height: calc(100svh - 82px); padding: 82px 0 0 0; align-items: stretch; }
+          .founder-card {
+            grid-template-columns: 1fr; border-radius: 0; flex: 1;
+            width: 100%; height: 100%; max-width: 100%;
+            padding: 1.5rem 1.2rem; gap: 1rem;
+            transition-delay: 0.5s;
+          }
+          .founder-photo { aspect-ratio: 16/9; }
         }
 
         /* ══ FOOTER ══ */
