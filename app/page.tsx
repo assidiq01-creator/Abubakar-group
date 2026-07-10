@@ -426,6 +426,12 @@ export default function Home() {
     return () => clearTimeout(t);
   }, []);
 
+  // Auto-focus body so scroll works immediately after refresh without needing a click
+  useEffect(() => {
+    document.body.tabIndex = -1;
+    document.body.focus({ preventScroll: true });
+  }, []);
+
   // Nav transparency → solid on scroll; hide on mobile while scrolling
   useEffect(() => {
     const nav = navRef.current;
