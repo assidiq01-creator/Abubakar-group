@@ -432,6 +432,27 @@ export default function Home() {
     document.body.focus({ preventScroll: true });
   }, []);
 
+  // Content protection
+  useEffect(() => {
+    const prevent = (e: Event) => e.preventDefault();
+    const onKey = (e: KeyboardEvent) => {
+      const ctrl = e.ctrlKey || e.metaKey;
+      if (
+        (ctrl && ["c","u","s","a","p"].includes(e.key.toLowerCase())) ||
+        e.key === "F12" ||
+        (ctrl && e.shiftKey && ["i","j","c"].includes(e.key.toLowerCase()))
+      ) e.preventDefault();
+    };
+    document.addEventListener("contextmenu", prevent);
+    document.addEventListener("dragstart", prevent);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("contextmenu", prevent);
+      document.removeEventListener("dragstart", prevent);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
   // Nav transparency → solid on scroll; hide on mobile while scrolling
   useEffect(() => {
     const nav = navRef.current;
