@@ -510,6 +510,46 @@ export default function Home() {
 
   return (
     <>
+      {/* ── JSON-LD STRUCTURED DATA ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Abubakar Group Ltd",
+          "url": "https://abubakar-group.com",
+          "logo": "https://abubakar-group.com/group-logo.png",
+          "description": "A diversified international holding company delivering excellence across trade, education, technology, real estate and digital innovation throughout Africa, Turkey and beyond.",
+          "foundingDate": "2018",
+          "founder": {
+            "@type": "Person",
+            "name": "Abubakar Ibrahim Abubakar"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "sales@abubakarmall.com",
+            "contactType": "customer service"
+          },
+          "sameAs": [
+            "https://www.facebook.com/AbubakarShoppingMall",
+            "https://x.com/abubakar_mall",
+            "https://www.instagram.com/abubakarmall/",
+            "https://www.linkedin.com/in/abubakar-ibrahim-abubakar-8688ab177/",
+            "https://www.youtube.com/@AbubakarGroup"
+          ],
+          "subOrganization": [
+            { "@type": "Organization", "name": "Abubakar Global Trade Solutions", "url": "https://abubakarmall.com" },
+            { "@type": "Organization", "name": "Abubakar Shopping Mall", "url": "https://abubakarmall.com/shop" },
+            { "@type": "Organization", "name": "ASM Academy", "url": "http://www.asm-academy.com.ng" },
+            { "@type": "Organization", "name": "ASM Consultancy", "url": "https://asm-consultancy.abubakarmall.com" },
+            { "@type": "Organization", "name": "ASM Real Estate", "url": "https://real-estate.abubakarmall.com" },
+            { "@type": "Organization", "name": "Yerwa Global", "url": "https://news.abubakarmall.com" },
+            { "@type": "Organization", "name": "Comme S One Ltd", "url": "https://commes-one.com" },
+            { "@type": "Organization", "name": "Arewa Digital Solutions", "url": "https://www.digital.abubakarmall.com" }
+          ]
+        })}}
+      />
+
       {/* ── SPLASH LOADER ── */}
       <div className={`splash${loaded ? " splash--out" : ""}`} aria-hidden="true" style={{ position: 'fixed', inset: 0, zIndex: 9999, background: '#081522', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div className="splash-inner">
