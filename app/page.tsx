@@ -511,7 +511,7 @@ export default function Home() {
   return (
     <>
       {/* ── SPLASH LOADER ── */}
-      <div className={`splash${loaded ? " splash--out" : ""}`} aria-hidden="true">
+      <div className={`splash${loaded ? " splash--out" : ""}`} aria-hidden="true" style={{ position: 'fixed', inset: 0, zIndex: 9999, background: '#081522', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div className="splash-inner">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/group-logo.png" alt="" className="splash-logo" />
