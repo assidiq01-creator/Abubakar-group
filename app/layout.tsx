@@ -20,7 +20,7 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable} ${montserrat.variable}`} style={{ background: '#081522' }}>
       <body>{children}</body>
     </html>
   );
