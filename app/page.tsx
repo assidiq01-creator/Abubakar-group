@@ -1702,13 +1702,13 @@ export default function Home() {
         }
         .splash-logo {
           width: clamp(260px, 55vw, 520px); height: auto;
-          animation: splashLogoIn 0.9s cubic-bezier(0.22,1,0.36,1) both;
+          opacity: 0; animation: splashLogoIn 0.9s 0.05s cubic-bezier(0.22,1,0.36,1) both;
         }
         .splash-tag {
           font-family: var(--font-nav);
           font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
           color: rgba(212,175,55,0.7);
-          animation: splashLogoIn 0.9s cubic-bezier(0.22,1,0.36,1) both;
+          opacity: 0; animation: splashLogoIn 0.9s 0.05s cubic-bezier(0.22,1,0.36,1) both;
         }
         .splash-bar {
           width: 160px; height: 2px;
@@ -1719,7 +1719,7 @@ export default function Home() {
           height: 100%; width: 0;
           background: linear-gradient(to right, var(--gold), var(--gold-light));
           border-radius: 2px;
-          animation: splashProgress 1.5s cubic-bezier(0.4,0,0.2,1) forwards;
+          animation: splashProgress 1.5s 0.05s cubic-bezier(0.4,0,0.2,1) forwards;
         }
         @keyframes splashLogoIn {
           from { opacity: 0; transform: translateY(18px); }
