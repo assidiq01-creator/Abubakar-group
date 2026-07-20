@@ -1052,7 +1052,7 @@ export default function Home() {
           display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0;
         }
         @media (max-width: 540px) {
-          .nav-logo { height: 30px; }
+          .nav-logo { height: 20px; }
           .nav-cta-btn { position: absolute; left: 50%; transform: translateX(-50%); }
           .hero-para { padding-right: 2rem; }
           .hero-building-panel { height: 100%; }
