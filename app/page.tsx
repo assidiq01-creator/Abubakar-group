@@ -554,7 +554,7 @@ export default function Home() {
       <div className={`splash${loaded ? " splash--out" : ""}`} aria-hidden="true" style={{ position: 'fixed', inset: 0, zIndex: 9999, background: '#081522', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div className="splash-inner">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/group-logo.png" alt="" className="splash-logo" />
+          <img src="/group-logo.png" alt="" className="splash-logo" style={{ opacity: 0 }} />
           <div className="splash-bar"><div className="splash-fill" /></div>
           <p className="splash-tag">Abubakar Group Ltd.</p>
         </div>
