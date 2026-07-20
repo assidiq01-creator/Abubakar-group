@@ -1698,7 +1698,7 @@ export default function Home() {
         .splash:not(.splash--out) ~ * .nav,
         .splash:not(.splash--out) ~ .nav { opacity: 0; pointer-events: none; }
         .splash-inner {
-          display: flex; flex-direction: column; align-items: center; gap: 1.8rem;
+          display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
         }
         .splash-logo {
           width: clamp(260px, 55vw, 520px); height: auto;
