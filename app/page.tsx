@@ -586,7 +586,9 @@ export default function Home() {
             ))}
           </ul>
 
-          <a href="mailto:sales@abubakarmall.com" className="btn btn-gold">Get In Touch</a>
+          <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+            <a href="mailto:sales@abubakarmall.com" className="btn btn-gold">Get In Touch</a>
+          </div>
 
           <button className="nav-burger" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
             <span /><span /><span />
