@@ -928,7 +928,7 @@ export default function Home() {
           height: 72px;
         }
         .nav-brand { flex-shrink: 0; }
-        .nav-logo { height: 60px; width: auto; object-fit: contain; display: block; }
+        .nav-logo { height: 90px; width: auto; object-fit: contain; display: block; }
         .nav-links {
           display: flex; gap: 2rem; list-style: none; margin-left: auto;
         }
@@ -1054,7 +1054,7 @@ export default function Home() {
           display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0;
         }
         @media (max-width: 540px) {
-          .nav-logo { height: 30px; }
+          .nav-logo { height: 52px; }
           .hero-para { padding-right: 2rem; }
           .hero-building-panel { height: 100%; }
           .hero-building-img { object-fit: contain; object-position: center top; }
