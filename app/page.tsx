@@ -586,9 +586,7 @@ export default function Home() {
             ))}
           </ul>
 
-          <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
-            <a href="mailto:sales@abubakarmall.com" className="btn btn-gold">Get In Touch</a>
-          </div>
+          <a href="mailto:sales@abubakarmall.com" className="btn btn-gold nav-cta-btn">Get In Touch</a>
 
           <button className="nav-burger" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
             <span /><span /><span />
@@ -1055,6 +1053,7 @@ export default function Home() {
         }
         @media (max-width: 540px) {
           .nav-logo { height: 52px; }
+          .nav-cta-btn { flex: 1; text-align: center; }
           .hero-para { padding-right: 2rem; }
           .hero-building-panel { height: 100%; }
           .hero-building-img { object-fit: contain; object-position: center top; }
