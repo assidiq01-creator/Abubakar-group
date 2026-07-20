@@ -1700,7 +1700,7 @@ export default function Home() {
           display: flex; flex-direction: column; align-items: center; gap: 1.8rem;
         }
         .splash-logo {
-          width: 160px; height: auto;
+          width: 320px; max-width: 80vw; height: auto;
           animation: splashLogoIn 0.9s cubic-bezier(0.22,1,0.36,1) both;
         }
         .splash-tag {
