@@ -73,10 +73,15 @@ export const viewport = {
   viewportFit: "cover",
 };
 
+import CookiePrefs from "./components/CookiePrefs";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} ${montserrat.variable}`} style={{ background: '#081522' }}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <CookiePrefs />
+      </body>
     </html>
   );
 }
