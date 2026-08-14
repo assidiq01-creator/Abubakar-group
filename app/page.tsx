@@ -24,7 +24,7 @@ const SUBSIDIARIES = [
     desc: "Africa's growing marketplace connecting global suppliers with African businesses and consumers through seamless B2B and B2C commerce solutions.",
     features: ["E-commerce", "Wholesale", "Global Sourcing"],
     logo: "https://abubakarmall.com/wp-content/uploads/2024/11/cropped-Untitled-design-10.png",
-    url: "https://abubakarmall.com/shop",
+    url: "https://abubakarmall.com/products",
     accent: "#1A72C2",
     imgBg: "linear-gradient(135deg,#061628 0%,#0E3060 50%,#061628 100%)",
     imgIcon: "🛒",
